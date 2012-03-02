@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="SpinnModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="SpinnModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SpinnModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="SpinnModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="People" EntityType="SpinnModel.Person" />
+          <EntitySet Name="Services" EntityType="SpinnModel.Service" />
+          <EntitySet Name="Skills" EntityType="SpinnModel.Skill" />
+          <EntitySet Name="Positions" EntityType="SpinnModel.Position" />
+          <EntitySet Name="SkillCategoryTags" EntityType="SpinnModel.SkillCategoryTag" />
+          <AssociationSet Name="PersonService" Association="SpinnModel.PersonService">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Service" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="SkillCategoryTagSkill" Association="SpinnModel.SkillCategoryTagSkill">
+            <End Role="SkillCategoryTag" EntitySet="SkillCategoryTags" />
+            <End Role="Skill" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="ServicePosition" Association="SpinnModel.ServicePosition">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="Position" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="SkillPosition" Association="SpinnModel.SkillPositions">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="Position" EntitySet="Positions" />
+          </AssociationSet>
+          <EntitySet Name="ProjectPersons" EntityType="SpinnModel.ProjectPerson" />
+          <AssociationSet Name="PersonProject" Association="SpinnModel.PersonProject">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Project" EntitySet="ProjectPersons" />
+          </AssociationSet>
+          <EntitySet Name="ProjectSkills" EntityType="SpinnModel.ProjectSkill" />
+          <AssociationSet Name="SkillProjectSkill" Association="SpinnModel.SkillProjectSkill">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="ProjectSkill" EntitySet="ProjectSkills" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectProjectSkill" Association="SpinnModel.ProjectProjectSkill">
+            <End Role="Project" EntitySet="ProjectPersons" />
+            <End Role="ProjectSkill" EntitySet="ProjectSkills" />
+          </AssociationSet>
+          <EntitySet Name="ProjectPositions" EntityType="SpinnModel.ProjectPosition" />
+          <AssociationSet Name="PositionProjectPosition" Association="SpinnModel.PositionProjectPosition">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="ProjectPosition" EntitySet="ProjectPositions" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectProjectPosition" Association="SpinnModel.ProjectProjectPosition">
+            <End Role="Project" EntitySet="ProjectPersons" />
+            <End Role="ProjectPosition" EntitySet="ProjectPositions" />
+          </AssociationSet>
+          <AssociationSet Name="SkillCategoryTagSkillCategoryTag" Association="SpinnModel.SkillCategoryTagSkillCategoryTag">
+            <End Role="SkillCategoryTag" EntitySet="SkillCategoryTags" />
+            <End Role="SkillCategoryTag1" EntitySet="SkillCategoryTags" />
+          </AssociationSet>
+          <EntitySet Name="Degrees" EntityType="SpinnModel.Degree" />
+          <EntitySet Name="Courses" EntityType="SpinnModel.Course" />
+          <EntitySet Name="Conventions" EntityType="SpinnModel.Convention" />
+          <AssociationSet Name="PersonDegree" Association="SpinnModel.PersonDegree">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Degree" EntitySet="Degrees" />
+          </AssociationSet>
+          <AssociationSet Name="PersonCourse" Association="SpinnModel.PersonCourse">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="PersonConvention" Association="SpinnModel.PersonConvention">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Convention" EntitySet="Conventions" />
+          </AssociationSet>
+          <EntitySet Name="Projects" EntityType="SpinnModel.Project" />
+          <AssociationSet Name="ProjectProjectPerson" Association="SpinnModel.ProjectProjectPerson">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectPerson" EntitySet="ProjectPersons" />
+          </AssociationSet>
+          <EntitySet Name="PersonPositions" EntityType="SpinnModel.PersonPosition" />
+          <AssociationSet Name="PositionPersonPosition" Association="SpinnModel.PositionPersonPosition">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="PersonPosition" EntitySet="PersonPositions" />
+          </AssociationSet>
+          <AssociationSet Name="PersonPersonPosition" Association="SpinnModel.PersonPersonPosition">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonPosition" EntitySet="PersonPositions" />
+          </AssociationSet>
+          <EntitySet Name="PersonSkills" EntityType="SpinnModel.PersonSkill" />
+          <AssociationSet Name="SkillPersonSkill" Association="SpinnModel.SkillPersonSkill">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="PersonSkill" EntitySet="PersonSkills" />
+          </AssociationSet>
+          <AssociationSet Name="PersonPersonSkill" Association="SpinnModel.PersonPersonSkill">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonSkill" EntitySet="PersonSkills" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" />
+          <Property Type="String" Name="LastName" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Gsm" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="String" Name="Street" Nullable="false" />
+          <Property Type="String" Name="HouseNumber" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" />
+          <Property Type="String" Name="PostalCode" Nullable="false" />
+          <Property Type="String" Name="Country" Nullable="false" />
+          <Property Type="String" Name="Nationality" Nullable="false" />
+          <Property Type="String" Name="Profile" Nullable="false" />
+          <NavigationProperty Name="Services" Relationship="SpinnModel.PersonService" FromRole="Person" ToRole="Service" />
+          <NavigationProperty Name="ProjectPersons" Relationship="SpinnModel.PersonProject" FromRole="Person" ToRole="Project" />
+          <NavigationProperty Name="Degrees" Relationship="SpinnModel.PersonDegree" FromRole="Person" ToRole="Degree" />
+          <NavigationProperty Name="Courses" Relationship="SpinnModel.PersonCourse" FromRole="Person" ToRole="Course" />
+          <NavigationProperty Name="Conventions" Relationship="SpinnModel.PersonConvention" FromRole="Person" ToRole="Convention" />
+          <NavigationProperty Name="PersonPositions" Relationship="SpinnModel.PersonPersonPosition" FromRole="Person" ToRole="PersonPosition" />
+          <NavigationProperty Name="PersonSkills" Relationship="SpinnModel.PersonPersonSkill" FromRole="Person" ToRole="PersonSkill" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonService" FromRole="Service" ToRole="Person" />
+          <NavigationProperty Name="Positions" Relationship="SpinnModel.ServicePosition" FromRole="Service" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="SkillCategoryTag" Relationship="SpinnModel.SkillCategoryTagSkill" FromRole="Skill" ToRole="SkillCategoryTag" />
+          <NavigationProperty Name="Positions" Relationship="SpinnModel.SkillPositions" FromRole="Skill" ToRole="Position" />
+          <NavigationProperty Name="ProjectSkills" Relationship="SpinnModel.SkillProjectSkill" FromRole="Skill" ToRole="ProjectSkill" />
+          <NavigationProperty Name="PersonSkills" Relationship="SpinnModel.SkillPersonSkill" FromRole="Skill" ToRole="PersonSkill" />
+          <Property Type="String" Name="Description" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Service" Relationship="SpinnModel.ServicePosition" FromRole="Position" ToRole="Service" />
+          <NavigationProperty Name="Skill" Relationship="SpinnModel.SkillPositions" FromRole="Position" ToRole="Skill" />
+          <NavigationProperty Name="ProjectPositions" Relationship="SpinnModel.PositionProjectPosition" FromRole="Position" ToRole="ProjectPosition" />
+          <NavigationProperty Name="PersonPositions" Relationship="SpinnModel.PositionPersonPosition" FromRole="Position" ToRole="PersonPosition" />
+          <Property Type="String" Name="Description" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillCategoryTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Skills" Relationship="SpinnModel.SkillCategoryTagSkill" FromRole="SkillCategoryTag" ToRole="Skill" />
+          <NavigationProperty Name="SkillChilldCategoryTags" Relationship="SpinnModel.SkillCategoryTagSkillCategoryTag" FromRole="SkillCategoryTag" ToRole="SkillCategoryTag1" />
+          <NavigationProperty Name="SkillParentCategoryTag" Relationship="SpinnModel.SkillCategoryTagSkillCategoryTag" FromRole="SkillCategoryTag1" ToRole="SkillCategoryTag" />
+        </EntityType>
+        <Association Name="PersonService">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="*" />
+          <End Type="SpinnModel.Service" Role="Service" Multiplicity="*" />
+        </Association>
+        <Association Name="SkillCategoryTagSkill">
+          <End Type="SpinnModel.SkillCategoryTag" Role="SkillCategoryTag" Multiplicity="*" />
+          <End Type="SpinnModel.Skill" Role="Skill" Multiplicity="*" />
+        </Association>
+        <Association Name="ServicePosition">
+          <End Type="SpinnModel.Service" Role="Service" Multiplicity="*" />
+          <End Type="SpinnModel.Position" Role="Position" Multiplicity="*" />
+        </Association>
+        <Association Name="SkillPositions">
+          <End Type="SpinnModel.Skill" Role="Skill" Multiplicity="*" />
+          <End Type="SpinnModel.Position" Role="Position" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProjectPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonProject" FromRole="Project" ToRole="Person" />
+          <NavigationProperty Name="ProjectSkills" Relationship="SpinnModel.ProjectProjectSkill" FromRole="Project" ToRole="ProjectSkill" />
+          <NavigationProperty Name="ProjectPositions" Relationship="SpinnModel.ProjectProjectPosition" FromRole="Project" ToRole="ProjectPosition" />
+          <NavigationProperty Name="Project" Relationship="SpinnModel.ProjectProjectPerson" FromRole="ProjectPerson" ToRole="Project" />
+        </EntityType>
+        <Association Name="PersonProject">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectPerson" Role="Project" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProjectSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Skill" Relationship="SpinnModel.SkillProjectSkill" FromRole="ProjectSkill" ToRole="Skill" />
+          <NavigationProperty Name="ProjectPerson" Relationship="SpinnModel.ProjectProjectSkill" FromRole="ProjectSkill" ToRole="Project" />
+          <Property Type="Int32" Name="Importance" Nullable="false" />
+        </EntityType>
+        <Association Name="SkillProjectSkill">
+          <End Type="SpinnModel.Skill" Role="Skill" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectSkill" Role="ProjectSkill" Multiplicity="*" />
+        </Association>
+        <Association Name="ProjectProjectSkill">
+          <End Type="SpinnModel.ProjectPerson" Role="Project" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectSkill" Role="ProjectSkill" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProjectPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Position" Relationship="SpinnModel.PositionProjectPosition" FromRole="ProjectPosition" ToRole="Position" />
+          <NavigationProperty Name="ProjectPerson" Relationship="SpinnModel.ProjectProjectPosition" FromRole="ProjectPosition" ToRole="Project" />
+          <Property Type="Int32" Name="Importance" Nullable="false" />
+        </EntityType>
+        <Association Name="PositionProjectPosition">
+          <End Type="SpinnModel.Position" Role="Position" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectPosition" Role="ProjectPosition" Multiplicity="*" />
+        </Association>
+        <Association Name="ProjectProjectPosition">
+          <End Type="SpinnModel.ProjectPerson" Role="Project" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectPosition" Role="ProjectPosition" Multiplicity="*" />
+        </Association>
+        <Association Name="SkillCategoryTagSkillCategoryTag">
+          <End Type="SpinnModel.SkillCategoryTag" Role="SkillCategoryTag" Multiplicity="1" />
+          <End Type="SpinnModel.SkillCategoryTag" Role="SkillCategoryTag1" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonDegree" FromRole="Degree" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonCourse" FromRole="Course" ToRole="Person" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="StartDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Convention">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Persons" Relationship="SpinnModel.PersonConvention" FromRole="Convention" ToRole="Person" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="StartDate" Nullable="false" />
+        </EntityType>
+        <Association Name="PersonDegree">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.Degree" Role="Degree" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonCourse">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.Course" Role="Course" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonConvention">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="*" />
+          <End Type="SpinnModel.Convention" Role="Convention" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" />
+          <NavigationProperty Name="ProjectPersons" Relationship="SpinnModel.ProjectProjectPerson" FromRole="Project" ToRole="ProjectPerson" />
+        </EntityType>
+        <Association Name="ProjectProjectPerson">
+          <End Type="SpinnModel.Project" Role="Project" Multiplicity="1" />
+          <End Type="SpinnModel.ProjectPerson" Role="ProjectPerson" Multiplicity="*" />
+        </Association>
+        <EntityType Name="PersonPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Importance" Nullable="false" />
+          <Property Type="String" Name="Level" Nullable="false" />
+          <NavigationProperty Name="Position" Relationship="SpinnModel.PositionPersonPosition" FromRole="PersonPosition" ToRole="Position" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonPersonPosition" FromRole="PersonPosition" ToRole="Person" />
+        </EntityType>
+        <Association Name="PositionPersonPosition">
+          <End Type="SpinnModel.Position" Role="Position" Multiplicity="1" />
+          <End Type="SpinnModel.PersonPosition" Role="PersonPosition" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonPersonPosition">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.PersonPosition" Role="PersonPosition" Multiplicity="*" />
+        </Association>
+        <EntityType Name="PersonSkill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Importance" Nullable="false" />
+          <Property Type="String" Name="Level" Nullable="false" />
+          <NavigationProperty Name="Skill" Relationship="SpinnModel.SkillPersonSkill" FromRole="PersonSkill" ToRole="Skill" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonPersonSkill" FromRole="PersonSkill" ToRole="Person" />
+        </EntityType>
+        <Association Name="SkillPersonSkill">
+          <End Type="SpinnModel.Skill" Role="Skill" Multiplicity="1" />
+          <End Type="SpinnModel.PersonSkill" Role="PersonSkill" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonPersonSkill">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.PersonSkill" Role="PersonSkill" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="SpinnModel" />
+        <Alias Key="Target" Value="SpinnModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="SpinnModelContainer" StorageEntityContainer="SpinnModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="SpinnModel" ZoomLevel="64" >
+        <EntityTypeShape EntityType="SpinnModel.Person" Width="1.5" PointX="12.75" PointY="0.75" Height="4.8648079427083326" />
+        <EntityTypeShape EntityType="SpinnModel.Service" Width="1.5" PointX="2.375" PointY="0.875" Height="1.9802864583333331" />
+        <EntityTypeShape EntityType="SpinnModel.Skill" Width="1.5" PointX="7.625" PointY="3.875" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="SpinnModel.Position" Width="1.5" PointX="5.625" PointY="1.75" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="SpinnModel.SkillCategoryTag" Width="1.75" PointX="8.375" PointY="6.75" Height="1.7879850260416674" />
+        <AssociationConnector Association="SpinnModel.PersonService">
+          <ConnectorPoint PointX="12.75" PointY="1.15625" />
+          <ConnectorPoint PointX="3.875" PointY="1.15625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.SkillCategoryTagSkill">
+          <ConnectorPoint PointX="8.75" PointY="6.75" />
+          <ConnectorPoint PointX="8.75" PointY="6.2398893229166665" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.ServicePosition">
+          <ConnectorPoint PointX="3.875" PointY="2.3026432291666663" />
+          <ConnectorPoint PointX="5.625" PointY="2.3026432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.SkillPositions">
+          <ConnectorPoint PointX="8.375" PointY="3.875" />
+          <ConnectorPoint PointX="8.375" PointY="2.9324446614583328" />
+          <ConnectorPoint PointX="7.125" PointY="2.9324446614583328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.ProjectPerson" Width="1.5" PointX="3.625" PointY="7" Height="2.5571907552083335" />
+        <AssociationConnector Association="SpinnModel.PersonProject">
+          <ConnectorPoint PointX="13.5" PointY="5.6148079427083326" />
+          <ConnectorPoint PointX="13.5" PointY="9.078837890625" />
+          <ConnectorPoint PointX="5.125" PointY="9.078837890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.ProjectSkill" Width="1.5" PointX="5.875" PointY="6.125" Height="1.7879850260416657" />
+        <AssociationConnector Association="SpinnModel.SkillProjectSkill">
+          <ConnectorPoint PointX="7.625" PointY="5.1199446614583337" />
+          <ConnectorPoint PointX="6.625" PointY="5.1199446614583337" />
+          <ConnectorPoint PointX="6.625" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.ProjectProjectSkill">
+          <ConnectorPoint PointX="5.125" PointY="7.4564925130208319" />
+          <ConnectorPoint PointX="5.875" PointY="7.4564925130208319" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.ProjectPosition" Width="1.5" PointX="3.75" PointY="3.625" Height="1.7879850260416657" />
+        <AssociationConnector Association="SpinnModel.PositionProjectPosition">
+          <ConnectorPoint PointX="5.625" PointY="3.8699446614583333" />
+          <ConnectorPoint PointX="5.25" PointY="3.8699446614583333" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.ProjectProjectPosition">
+          <ConnectorPoint PointX="4.4375" PointY="7" />
+          <ConnectorPoint PointX="4.4375" PointY="5.4129850260416656" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.SkillCategoryTagSkillCategoryTag">
+          <ConnectorPoint PointX="8.9955769230769231" PointY="8.5379850260416674" />
+          <ConnectorPoint PointX="8.9955769230769231" PointY="8.7879850260416674" />
+          <ConnectorPoint PointX="9.5165384615384614" PointY="8.7879850260416674" />
+          <ConnectorPoint PointX="9.5165384615384614" PointY="8.5379850260416674" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.Degree" Width="1.5" PointX="15.75" PointY="1.125" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="SpinnModel.Course" Width="1.5" PointX="15.875" PointY="2.875" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="SpinnModel.Convention" Width="1.5" PointX="16" PointY="5.625" Height="1.9802864583333335" />
+        <AssociationConnector Association="SpinnModel.PersonDegree">
+          <ConnectorPoint PointX="14.25" PointY="1.8266910807291668" />
+          <ConnectorPoint PointX="15.75" PointY="1.8266910807291668" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonCourse">
+          <ConnectorPoint PointX="14.25" PointY="3.8651432291666667" />
+          <ConnectorPoint PointX="15.875" PointY="3.8651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonConvention">
+          <ConnectorPoint PointX="14.25" PointY="5.2662972005208335" />
+          <ConnectorPoint PointX="17.46875" PointY="5.2662972005208335" />
+          <ConnectorPoint PointX="17.46875" PointY="5.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.Project" Width="1.5" PointX="0.5" PointY="5.75" Height="1.9802864583333326" />
+        <AssociationConnector Association="SpinnModel.ProjectProjectPerson">
+          <ConnectorPoint PointX="2" PointY="7.4612939453125" />
+          <ConnectorPoint PointX="3.625" PointY="7.4612939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.PersonPosition" Width="1.5" PointX="9.375" PointY="1.5" Height="1.9802864583333331" />
+        <AssociationConnector Association="SpinnModel.PositionPersonPosition">
+          <ConnectorPoint PointX="7.125" PointY="2.2787223307291664" />
+          <ConnectorPoint PointX="9.375" PointY="2.2787223307291664" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonPersonPosition">
+          <ConnectorPoint PointX="12.75" PointY="2.4901432291666667" />
+          <ConnectorPoint PointX="10.875" PointY="2.4901432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.PersonSkill" Width="1.5" PointX="10.125" PointY="4.25" Height="1.9802864583333326" />
+        <AssociationConnector Association="SpinnModel.SkillPersonSkill">
+          <ConnectorPoint PointX="9.125" PointY="5.2401432291666659" />
+          <ConnectorPoint PointX="10.125" PointY="5.2401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonPersonSkill">
+          <ConnectorPoint PointX="12.75" PointY="4.9324039713541667" />
+          <ConnectorPoint PointX="11.625" PointY="4.9324039713541667" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
