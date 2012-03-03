@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Frontend", "Spinn.Fro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.DAL.EF", "Spinn.DAL.EF\Spinn.DAL.EF.csproj", "{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Model", "Spinn.Model\Spinn.Model.csproj", "{B9120EDB-ABEC-4B25-8955-BE10F7670174}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

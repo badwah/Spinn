@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -49,6 +50,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpinnModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SpinnModelGenerator.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpinnModelGenerator.Context.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="SpinnModel.edmx">
@@ -58,6 +64,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="SpinnModelGenerator.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SpinnModelGenerator.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SpinnModelGenerator.tt">
+      <LastGenOutput>SpinnModelGenerator.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spinn.Model\Spinn.Model.csproj">
+      <Project>{B9120EDB-ABEC-4B25-8955-BE10F7670174}</Project>
+      <Name>Spinn.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

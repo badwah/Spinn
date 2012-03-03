@@ -68,10 +68,6 @@
             <End Role="Person" EntitySet="People" />
             <End Role="Degree" EntitySet="Degrees" />
           </AssociationSet>
-          <AssociationSet Name="PersonCourse" Association="SpinnModel.PersonCourse">
-            <End Role="Person" EntitySet="People" />
-            <End Role="Course" EntitySet="Courses" />
-          </AssociationSet>
           <AssociationSet Name="PersonConvention" Association="SpinnModel.PersonConvention">
             <End Role="Person" EntitySet="People" />
             <End Role="Convention" EntitySet="Conventions" />
@@ -99,6 +95,30 @@
             <End Role="Person" EntitySet="People" />
             <End Role="PersonSkill" EntitySet="PersonSkills" />
           </AssociationSet>
+          <EntitySet Name="Employers" EntityType="SpinnModel.Employer" />
+          <EntitySet Name="Employees" EntityType="SpinnModel.Employee" />
+          <AssociationSet Name="EmployerEmployee" Association="SpinnModel.EmployerEmployee">
+            <End Role="Employer" EntitySet="Employers" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="PersonEmployee" Association="SpinnModel.PersonEmployee">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <EntitySet Name="CourseStudents" EntityType="SpinnModel.CourseStudent" />
+          <AssociationSet Name="CourseCourseStudent" Association="SpinnModel.CourseCourseStudent">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="CourseStudent" EntitySet="CourseStudents" />
+          </AssociationSet>
+          <AssociationSet Name="PersonCourseStudent" Association="SpinnModel.PersonCourseStudent">
+            <End Role="Person" EntitySet="People" />
+            <End Role="CourseStudent" EntitySet="CourseStudents" />
+          </AssociationSet>
+          <EntitySet Name="Clients" EntityType="SpinnModel.Client" />
+          <AssociationSet Name="ClientProject" Association="SpinnModel.ClientProject">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Person">
           <Key>
@@ -120,10 +140,11 @@
           <NavigationProperty Name="Services" Relationship="SpinnModel.PersonService" FromRole="Person" ToRole="Service" />
           <NavigationProperty Name="ProjectPersons" Relationship="SpinnModel.PersonProject" FromRole="Person" ToRole="Project" />
           <NavigationProperty Name="Degrees" Relationship="SpinnModel.PersonDegree" FromRole="Person" ToRole="Degree" />
-          <NavigationProperty Name="Courses" Relationship="SpinnModel.PersonCourse" FromRole="Person" ToRole="Course" />
           <NavigationProperty Name="Conventions" Relationship="SpinnModel.PersonConvention" FromRole="Person" ToRole="Convention" />
           <NavigationProperty Name="PersonPositions" Relationship="SpinnModel.PersonPersonPosition" FromRole="Person" ToRole="PersonPosition" />
           <NavigationProperty Name="PersonSkills" Relationship="SpinnModel.PersonPersonSkill" FromRole="Person" ToRole="PersonSkill" />
+          <NavigationProperty Name="Employees" Relationship="SpinnModel.PersonEmployee" FromRole="Person" ToRole="Employee" />
+          <NavigationProperty Name="CourseStudents" Relationship="SpinnModel.PersonCourseStudent" FromRole="Person" ToRole="CourseStudent" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -132,7 +153,7 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" Nullable="false" />
           <Property Type="String" Name="Description" Nullable="false" />
-          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonService" FromRole="Service" ToRole="Person" />
+          <NavigationProperty Name="Persons" Relationship="SpinnModel.PersonService" FromRole="Service" ToRole="Person" />
           <NavigationProperty Name="Positions" Relationship="SpinnModel.ServicePosition" FromRole="Service" ToRole="Position" />
         </EntityType>
         <EntityType Name="Skill">
@@ -141,7 +162,7 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <NavigationProperty Name="SkillCategoryTag" Relationship="SpinnModel.SkillCategoryTagSkill" FromRole="Skill" ToRole="SkillCategoryTag" />
+          <NavigationProperty Name="SkillCategoryTags" Relationship="SpinnModel.SkillCategoryTagSkill" FromRole="Skill" ToRole="SkillCategoryTag" />
           <NavigationProperty Name="Positions" Relationship="SpinnModel.SkillPositions" FromRole="Skill" ToRole="Position" />
           <NavigationProperty Name="ProjectSkills" Relationship="SpinnModel.SkillProjectSkill" FromRole="Skill" ToRole="ProjectSkill" />
           <NavigationProperty Name="PersonSkills" Relationship="SpinnModel.SkillPersonSkill" FromRole="Skill" ToRole="PersonSkill" />
@@ -153,8 +174,8 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <NavigationProperty Name="Service" Relationship="SpinnModel.ServicePosition" FromRole="Position" ToRole="Service" />
-          <NavigationProperty Name="Skill" Relationship="SpinnModel.SkillPositions" FromRole="Position" ToRole="Skill" />
+          <NavigationProperty Name="Services" Relationship="SpinnModel.ServicePosition" FromRole="Position" ToRole="Service" />
+          <NavigationProperty Name="Skills" Relationship="SpinnModel.SkillPositions" FromRole="Position" ToRole="Skill" />
           <NavigationProperty Name="ProjectPositions" Relationship="SpinnModel.PositionProjectPosition" FromRole="Position" ToRole="ProjectPosition" />
           <NavigationProperty Name="PersonPositions" Relationship="SpinnModel.PositionPersonPosition" FromRole="Position" ToRole="PersonPosition" />
           <Property Type="String" Name="Description" Nullable="false" />
@@ -245,16 +266,19 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Person" Relationship="SpinnModel.PersonDegree" FromRole="Degree" ToRole="Person" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="StartDate" Nullable="false" />
+          <Property Type="String" Name="EndDate" Nullable="false" />
+          <Property Type="String" Name="DegreeType" Nullable="false" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonCourse" FromRole="Course" ToRole="Person" />
           <Property Type="String" Name="Name" Nullable="false" />
           <Property Type="String" Name="Description" Nullable="false" />
-          <Property Type="String" Name="StartDate" Nullable="false" />
+          <NavigationProperty Name="CourseStudents" Relationship="SpinnModel.CourseCourseStudent" FromRole="Course" ToRole="CourseStudent" />
         </EntityType>
         <EntityType Name="Convention">
           <Key>
@@ -270,10 +294,6 @@
           <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
           <End Type="SpinnModel.Degree" Role="Degree" Multiplicity="*" />
         </Association>
-        <Association Name="PersonCourse">
-          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="SpinnModel.Course" Role="Course" Multiplicity="*" />
-        </Association>
         <Association Name="PersonConvention">
           <End Type="SpinnModel.Person" Role="Person" Multiplicity="*" />
           <End Type="SpinnModel.Convention" Role="Convention" Multiplicity="*" />
@@ -288,6 +308,7 @@
           <Property Type="DateTime" Name="StartDate" Nullable="false" />
           <Property Type="DateTime" Name="EndDate" Nullable="false" />
           <NavigationProperty Name="ProjectPersons" Relationship="SpinnModel.ProjectProjectPerson" FromRole="Project" ToRole="ProjectPerson" />
+          <NavigationProperty Name="Client" Relationship="SpinnModel.ClientProject" FromRole="Project" ToRole="Client" />
         </EntityType>
         <Association Name="ProjectProjectPerson">
           <End Type="SpinnModel.Project" Role="Project" Multiplicity="1" />
@@ -329,6 +350,63 @@
           <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
           <End Type="SpinnModel.PersonSkill" Role="PersonSkill" Multiplicity="*" />
         </Association>
+        <EntityType Name="Employer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="SpinnModel.EmployerEmployee" FromRole="Employer" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Employer" Relationship="SpinnModel.EmployerEmployee" FromRole="Employee" ToRole="Employer" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonEmployee" FromRole="Employee" ToRole="Person" />
+        </EntityType>
+        <Association Name="EmployerEmployee">
+          <End Type="SpinnModel.Employer" Role="Employer" Multiplicity="1" />
+          <End Type="SpinnModel.Employee" Role="Employee" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonEmployee">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.Employee" Role="Employee" Multiplicity="*" />
+        </Association>
+        <EntityType Name="CourseStudent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="SpinnModel.CourseCourseStudent" FromRole="CourseStudent" ToRole="Course" />
+          <NavigationProperty Name="Person" Relationship="SpinnModel.PersonCourseStudent" FromRole="CourseStudent" ToRole="Person" />
+        </EntityType>
+        <Association Name="CourseCourseStudent">
+          <End Type="SpinnModel.Course" Role="Course" Multiplicity="1" />
+          <End Type="SpinnModel.CourseStudent" Role="CourseStudent" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonCourseStudent">
+          <End Type="SpinnModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="SpinnModel.CourseStudent" Role="CourseStudent" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="SpinnModel.ClientProject" FromRole="Client" ToRole="Project" />
+        </EntityType>
+        <Association Name="ClientProject">
+          <End Type="SpinnModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="SpinnModel.Project" Role="Project" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -352,6 +430,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
@@ -379,11 +458,19 @@
           <ConnectorPoint PointX="8.375" PointY="2.9324446614583328" />
           <ConnectorPoint PointX="7.125" PointY="2.9324446614583328" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="SpinnModel.ProjectPerson" Width="1.5" PointX="3.625" PointY="7" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="SpinnModel.ProjectPerson" Width="1.5" PointX="3.625" PointY="7.875" Height="2.5571907552083335" />
         <AssociationConnector Association="SpinnModel.PersonProject">
-          <ConnectorPoint PointX="13.5" PointY="5.6148079427083326" />
-          <ConnectorPoint PointX="13.5" PointY="9.078837890625" />
-          <ConnectorPoint PointX="5.125" PointY="9.078837890625" />
+          <ConnectorPoint PointX="13.718752" PointY="5.807109375" />
+          <ConnectorPoint PointX="13.718752" PointY="7.5" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="7.4999999999999991" />
+          <ConnectorPoint PointX="13.041666666666666" PointY="7.5" />
+          <ConnectorPoint PointX="11.75" PointY="7.5" />
+          <ConnectorPoint PointX="11.75" PointY="9" />
+          <ConnectorPoint PointX="6.708333333333333" PointY="9" />
+          <ConnectorPoint PointX="6.541666666666667" PointY="9" />
+          <ConnectorPoint PointX="5.5" PointY="9" />
+          <ConnectorPoint PointX="5.5" PointY="9.1535953776041659" />
+          <ConnectorPoint PointX="5.125" PointY="9.1535953776041659" />
         </AssociationConnector>
         <EntityTypeShape EntityType="SpinnModel.ProjectSkill" Width="1.5" PointX="5.875" PointY="6.125" Height="1.7879850260416657" />
         <AssociationConnector Association="SpinnModel.SkillProjectSkill">
@@ -392,17 +479,19 @@
           <ConnectorPoint PointX="6.625" PointY="6.125" />
         </AssociationConnector>
         <AssociationConnector Association="SpinnModel.ProjectProjectSkill">
-          <ConnectorPoint PointX="5.125" PointY="7.4564925130208319" />
-          <ConnectorPoint PointX="5.875" PointY="7.4564925130208319" />
+          <ConnectorPoint PointX="5.125" PointY="9.82414556640625" />
+          <ConnectorPoint PointX="6.625" PointY="9.82414556640625" />
+          <ConnectorPoint PointX="6.625" PointY="7.9129850260416656" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="SpinnModel.ProjectPosition" Width="1.5" PointX="3.75" PointY="3.625" Height="1.7879850260416657" />
+        <EntityTypeShape EntityType="SpinnModel.ProjectPosition" Width="1.5" PointX="3.5" PointY="4" Height="1.7879850260416657" />
         <AssociationConnector Association="SpinnModel.PositionProjectPosition">
-          <ConnectorPoint PointX="5.625" PointY="3.8699446614583333" />
-          <ConnectorPoint PointX="5.25" PointY="3.8699446614583333" />
+          <ConnectorPoint PointX="6.375" PointY="4.1148893229166665" />
+          <ConnectorPoint PointX="6.375" PointY="4.9514376744791662" />
+          <ConnectorPoint PointX="5" PointY="4.9514376744791662" />
         </AssociationConnector>
         <AssociationConnector Association="SpinnModel.ProjectProjectPosition">
-          <ConnectorPoint PointX="4.4375" PointY="7" />
-          <ConnectorPoint PointX="4.4375" PointY="5.4129850260416656" />
+          <ConnectorPoint PointX="4.56249875" PointY="7.875" />
+          <ConnectorPoint PointX="4.56249875" PointY="5.7879850260416656" />
         </AssociationConnector>
         <AssociationConnector Association="SpinnModel.SkillCategoryTagSkillCategoryTag">
           <ConnectorPoint PointX="8.9955769230769231" PointY="8.5379850260416674" />
@@ -410,26 +499,23 @@
           <ConnectorPoint PointX="9.5165384615384614" PointY="8.7879850260416674" />
           <ConnectorPoint PointX="9.5165384615384614" PointY="8.5379850260416674" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="SpinnModel.Degree" Width="1.5" PointX="15.75" PointY="1.125" Height="1.4033821614583335" />
-        <EntityTypeShape EntityType="SpinnModel.Course" Width="1.5" PointX="15.875" PointY="2.875" Height="1.9802864583333335" />
-        <EntityTypeShape EntityType="SpinnModel.Convention" Width="1.5" PointX="16" PointY="5.625" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="SpinnModel.Degree" Width="1.5" PointX="15.75" PointY="1.125" Height="2.172587890625" />
+        <EntityTypeShape EntityType="SpinnModel.Course" Width="1.5" PointX="17" PointY="3.5" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="SpinnModel.Convention" Width="1.5" PointX="16.125" PointY="6.375" Height="1.9802864583333335" />
         <AssociationConnector Association="SpinnModel.PersonDegree">
-          <ConnectorPoint PointX="14.25" PointY="1.8266910807291668" />
-          <ConnectorPoint PointX="15.75" PointY="1.8266910807291668" />
-        </AssociationConnector>
-        <AssociationConnector Association="SpinnModel.PersonCourse">
-          <ConnectorPoint PointX="14.25" PointY="3.8651432291666667" />
-          <ConnectorPoint PointX="15.875" PointY="3.8651432291666667" />
+          <ConnectorPoint PointX="14.25" PointY="2.2112939453125" />
+          <ConnectorPoint PointX="15.75" PointY="2.2112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="SpinnModel.PersonConvention">
-          <ConnectorPoint PointX="14.25" PointY="5.2662972005208335" />
-          <ConnectorPoint PointX="17.46875" PointY="5.2662972005208335" />
-          <ConnectorPoint PointX="17.46875" PointY="5.625" />
+          <ConnectorPoint PointX="14.1718775" PointY="5.6148079427083326" />
+          <ConnectorPoint PointX="14.1718775" PointY="6.84375" />
+          <ConnectorPoint PointX="16.125" PointY="6.84375" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="SpinnModel.Project" Width="1.5" PointX="0.5" PointY="5.75" Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="SpinnModel.Project" Width="1.5" PointX="0.875" PointY="5.875" Height="2.1725878906249996" />
         <AssociationConnector Association="SpinnModel.ProjectProjectPerson">
-          <ConnectorPoint PointX="2" PointY="7.4612939453125" />
-          <ConnectorPoint PointX="3.625" PointY="7.4612939453125" />
+          <ConnectorPoint PointX="2.375" PointY="6.8437474999999992" />
+          <ConnectorPoint PointX="4.062496875" PointY="6.8437474999999992" />
+          <ConnectorPoint PointX="4.062496875" PointY="7.875" />
         </AssociationConnector>
         <EntityTypeShape EntityType="SpinnModel.PersonPosition" Width="1.5" PointX="9.375" PointY="1.5" Height="1.9802864583333331" />
         <AssociationConnector Association="SpinnModel.PositionPersonPosition">
@@ -448,6 +534,30 @@
         <AssociationConnector Association="SpinnModel.PersonPersonSkill">
           <ConnectorPoint PointX="12.75" PointY="4.9324039713541667" />
           <ConnectorPoint PointX="11.625" PointY="4.9324039713541667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.Employer" Width="1.5" PointX="8.375" PointY="9.25" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="SpinnModel.Employee" Width="1.5" PointX="12" PointY="7.75" Height="1.7879850260416657" />
+        <AssociationConnector Association="SpinnModel.EmployerEmployee">
+          <ConnectorPoint PointX="9.875" PointY="9.4901432291666659" />
+          <ConnectorPoint PointX="12" PointY="9.4901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonEmployee">
+          <ConnectorPoint PointX="13.125" PointY="5.807109375" />
+          <ConnectorPoint PointX="13.125" PointY="7.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.CourseStudent" Width="1.5" PointX="14.875" PointY="3.5" Height="1.7879850260416657" />
+        <AssociationConnector Association="SpinnModel.CourseCourseStudent">
+          <ConnectorPoint PointX="17" PointY="4.3939925130208328" />
+          <ConnectorPoint PointX="16.375" PointY="4.3939925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="SpinnModel.PersonCourseStudent">
+          <ConnectorPoint PointX="14.25" PointY="4.3939925130208328" />
+          <ConnectorPoint PointX="14.875" PointY="4.3939925130208328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SpinnModel.Client" Width="1.5" PointX="0.875" PointY="8.875" Height="1.5956835937499996" />
+        <AssociationConnector Association="SpinnModel.ClientProject">
+          <ConnectorPoint PointX="1.625" PointY="8.875" />
+          <ConnectorPoint PointX="1.625" PointY="8.2398893229166656" />
         </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
