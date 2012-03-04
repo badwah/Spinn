@@ -1,0 +1,16 @@
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\obj\Debug\ResolveAssemblyReference.cache
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Repository.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Repository.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.Unity.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Common.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Model.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Common.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Spinn.Model.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.Unity.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\obj\Debug\Spinn.Repository.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Repository\obj\Debug\Spinn.Repository.pdb

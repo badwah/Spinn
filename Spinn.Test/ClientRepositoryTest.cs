@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Spinn.Repository;
 
 namespace Spinn.Test
 {
@@ -10,8 +11,11 @@ namespace Spinn.Test
     public class ClientRepositoryTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetAllTest()
         {
+            var clientRepo = RepositoryFactory.GetClientRepository();
+            var allClients = clientRepo.All();
+            Assert.IsTrue(allClients.Count()>0);
         }
     }
 }

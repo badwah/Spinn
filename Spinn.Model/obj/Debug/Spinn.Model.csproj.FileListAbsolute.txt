@@ -1,0 +1,5 @@
+C:\TFS\Spinn\Code\Spinn\Spinn.Model\bin\Debug\Spinn.Model.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Model\bin\Debug\Spinn.Model.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\TFS\Spinn\Code\Spinn\Spinn.Model\obj\Debug\Spinn.Model.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Model\obj\Debug\Spinn.Model.pdb

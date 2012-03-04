@@ -1,0 +1,5 @@
+C:\TFS\Spinn\Code\Spinn\Spinn.Common\bin\Debug\Spinn.Common.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Common\bin\Debug\Spinn.Common.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Common\obj\Debug\ResolveAssemblyReference.cache
+C:\TFS\Spinn\Code\Spinn\Spinn.Common\obj\Debug\Spinn.Common.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Common\obj\Debug\Spinn.Common.pdb
