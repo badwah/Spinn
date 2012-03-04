@@ -1,5 +1,0 @@
-<Modules>
-  <Module PersistentId="BCBD1607-A006-4AF8-A5A5-FC9776592EFB" ModuleId="Spinn.DAL.EF" />
-  <Module PersistentId="B9120EDB-ABEC-4B25-8955-BE10F7670174" ModuleId="Spinn.Model" />
-  <Module PersistentId="DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4" ModuleId="Spinn.Common" />
-</Modules>
