@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Spinn.Common
 {
     public interface IRepository<T> where T : class
     {
-        T GetById(int id);
-        IEnumerable<T> GetAll();
+        IUnitOfWork UnitOfWork { get; }
+        IQueryable<T> All();
+        IQueryable<T> Where(Expression<Func<T, bool>> expression);
         void Add(T newItem);
-        void Update(T newItem);
-
+        void Update(T updatedItem);
+        void Delete(T deletedItem);
     }
 }

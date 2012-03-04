@@ -7,7 +7,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.DAL.EF", "Spinn.DAL.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Model", "Spinn.Model\Spinn.Model.csproj", "{B9120EDB-ABEC-4B25-8955-BE10F7670174}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Common", "Spinn.Common\Spinn.Common.csproj", "{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Repository", "Spinn.Repository\Spinn.Repository.csproj", "{5327A3DF-81C4-4F77-8901-142159CEFF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Test", "Spinn.Test\Spinn.Test.csproj", "{0857D586-81A0-460A-9BE8-80865D39BD08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4CC51633-3D00-4C61-A022-B797A38BDEB4}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Spinn.vsmdi = Spinn.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Spinn.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,8 +41,23 @@ Global
 		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9120EDB-ABEC-4B25-8955-BE10F7670174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5327A3DF-81C4-4F77-8901-142159CEFF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5327A3DF-81C4-4F77-8901-142159CEFF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5327A3DF-81C4-4F77-8901-142159CEFF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5327A3DF-81C4-4F77-8901-142159CEFF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0857D586-81A0-460A-9BE8-80865D39BD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0857D586-81A0-460A-9BE8-80865D39BD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0857D586-81A0-460A-9BE8-80865D39BD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0857D586-81A0-460A-9BE8-80865D39BD08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal
