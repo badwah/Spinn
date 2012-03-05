@@ -19,7 +19,7 @@ namespace Spinn.Model
         public System.DateTime EndDate { get; set; }
         public string Description { get; set; }
     
-        public virtual Employer Employer { get; set; }
-        public virtual Person Person { get; set; }
+        public Employer Employer { get; set; }
+        public Person Person { get; set; }
     }
 }

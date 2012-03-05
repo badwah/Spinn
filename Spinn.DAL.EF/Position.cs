@@ -26,9 +26,9 @@ namespace Spinn.Model
         public string Name { get; set; }
         public string Description { get; set; }
     
-        public virtual ICollection<Service> Services { get; set; }
-        public virtual ICollection<Skill> Skills { get; set; }
-        public virtual ICollection<ProjectPosition> ProjectPositions { get; set; }
-        public virtual ICollection<PersonPosition> PersonPositions { get; set; }
+        public ICollection<Service> Services { get; set; }
+        public ICollection<Skill> Skills { get; set; }
+        public ICollection<ProjectPosition> ProjectPositions { get; set; }
+        public ICollection<PersonPosition> PersonPositions { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SpinnModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-  <EntityContainer Name="SpinnModelContainer" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SpinnModelContainer" annotation:LazyLoadingEnabled="false">
     <EntitySet Name="People" EntityType="SpinnModel.Person" />
     <EntitySet Name="Services" EntityType="SpinnModel.Service" />
     <EntitySet Name="Skills" EntityType="SpinnModel.Skill" />
@@ -294,8 +294,7 @@
     <Property Type="String" Name="Name" Nullable="false" />
     <Property Type="String" Name="Description" Nullable="false" />
     <Property Type="DateTime" Name="StartDate" Nullable="false" />
-    <Property Type="DateTime" Name="EndDate" Nullable="false" />
-    <NavigationProperty Name="ProjectPersons" Relationship="SpinnModel.ProjectProjectPerson" FromRole="Project" ToRole="ProjectPerson" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
     <NavigationProperty Name="Client" Relationship="SpinnModel.ClientProject" FromRole="Project" ToRole="Client" />
   </EntityType>
   <Association Name="ProjectProjectPerson">
@@ -389,7 +388,6 @@
     <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Name" Nullable="false" />
     <Property Type="String" Name="Description" Nullable="false" />
-    <NavigationProperty Name="Projects" Relationship="SpinnModel.ClientProject" FromRole="Client" ToRole="Project" />
   </EntityType>
   <Association Name="ClientProject">
     <End Type="SpinnModel.Client" Role="Client" Multiplicity="1" />

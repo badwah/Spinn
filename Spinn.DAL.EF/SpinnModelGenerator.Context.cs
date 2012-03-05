@@ -19,6 +19,7 @@ namespace Spinn.DAL.EF
         public SpinnModelContainer()
             : base("name=SpinnModelContainer")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -251,7 +251,9 @@ void WriteProperty(string accessibility, string type, string name, string getter
 
 string PropertyVirtualModifier(string accessibility)
 {
-    return accessibility + (accessibility != "private" ? " virtual" : "");
+	//REMOVED FOR SERIALISATION
+    //return accessibility + (accessibility != "private" ? " virtual" : "");
+	return accessibility;
 }
 
 bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)

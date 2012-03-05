@@ -1,143 +1,206 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SpinnModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="SpinnModelStoreContainer">
-    <EntitySet Name="People" EntityType="SpinnModel.Store.People" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Services" EntityType="SpinnModel.Store.Services" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Skills" EntityType="SpinnModel.Store.Skills" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Positions" EntityType="SpinnModel.Store.Positions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SkillCategoryTags" EntityType="SpinnModel.Store.SkillCategoryTags" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectPersons" EntityType="SpinnModel.Store.ProjectPersons" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectSkills" EntityType="SpinnModel.Store.ProjectSkills" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectPositions" EntityType="SpinnModel.Store.ProjectPositions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Degrees" EntityType="SpinnModel.Store.Degrees" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Courses" EntityType="SpinnModel.Store.Courses" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Conventions" EntityType="SpinnModel.Store.Conventions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Projects" EntityType="SpinnModel.Store.Projects" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PersonPositions" EntityType="SpinnModel.Store.PersonPositions" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PersonSkills" EntityType="SpinnModel.Store.PersonSkills" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Employers" EntityType="SpinnModel.Store.Employers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Employees" EntityType="SpinnModel.Store.Employees" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CourseStudents" EntityType="SpinnModel.Store.CourseStudents" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Clients" EntityType="SpinnModel.Store.Clients" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PersonService" EntityType="SpinnModel.Store.PersonService" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SkillCategoryTagSkill" EntityType="SpinnModel.Store.SkillCategoryTagSkill" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ServicePosition" EntityType="SpinnModel.Store.ServicePosition" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SkillPosition" EntityType="SpinnModel.Store.SkillPositions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Conventions" EntityType="SpinnModel.Store.Conventions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="SpinnModel.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseStudents" EntityType="SpinnModel.Store.CourseStudents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Degrees" EntityType="SpinnModel.Store.Degrees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="SpinnModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employers" EntityType="SpinnModel.Store.Employers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="SpinnModel.Store.People" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PersonConvention" EntityType="SpinnModel.Store.PersonConvention" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonPositions" EntityType="SpinnModel.Store.PersonPositions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonService" EntityType="SpinnModel.Store.PersonService" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonSkills" EntityType="SpinnModel.Store.PersonSkills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Positions" EntityType="SpinnModel.Store.Positions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectPersons" EntityType="SpinnModel.Store.ProjectPersons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectPositions" EntityType="SpinnModel.Store.ProjectPositions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projects" EntityType="SpinnModel.Store.Projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectSkills" EntityType="SpinnModel.Store.ProjectSkills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServicePosition" EntityType="SpinnModel.Store.ServicePosition" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Services" EntityType="SpinnModel.Store.Services" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkillCategoryTags" EntityType="SpinnModel.Store.SkillCategoryTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkillCategoryTagSkill" EntityType="SpinnModel.Store.SkillCategoryTagSkill" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SkillPosition" EntityType="SpinnModel.Store.SkillPosition" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills" EntityType="SpinnModel.Store.Skills" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ClientProject" Association="SpinnModel.Store.FK_ClientProject">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseCourseStudent" Association="SpinnModel.Store.FK_CourseCourseStudent">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="CourseStudents" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployerEmployee" Association="SpinnModel.Store.FK_EmployerEmployee">
+      <End Role="Employers" EntitySet="Employers" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonConvention_Convention" Association="SpinnModel.Store.FK_PersonConvention_Convention">
+      <End Role="Conventions" EntitySet="Conventions" />
+      <End Role="PersonConvention" EntitySet="PersonConvention" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonConvention_Person" Association="SpinnModel.Store.FK_PersonConvention_Person">
+      <End Role="People" EntitySet="People" />
+      <End Role="PersonConvention" EntitySet="PersonConvention" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonCourseStudent" Association="SpinnModel.Store.FK_PersonCourseStudent">
+      <End Role="People" EntitySet="People" />
+      <End Role="CourseStudents" EntitySet="CourseStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonDegree" Association="SpinnModel.Store.FK_PersonDegree">
+      <End Role="People" EntitySet="People" />
+      <End Role="Degrees" EntitySet="Degrees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonEmployee" Association="SpinnModel.Store.FK_PersonEmployee">
+      <End Role="People" EntitySet="People" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonPersonPosition" Association="SpinnModel.Store.FK_PersonPersonPosition">
+      <End Role="People" EntitySet="People" />
+      <End Role="PersonPositions" EntitySet="PersonPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonPersonSkill" Association="SpinnModel.Store.FK_PersonPersonSkill">
+      <End Role="People" EntitySet="People" />
+      <End Role="PersonSkills" EntitySet="PersonSkills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonProject" Association="SpinnModel.Store.FK_PersonProject">
+      <End Role="People" EntitySet="People" />
+      <End Role="ProjectPersons" EntitySet="ProjectPersons" />
+    </AssociationSet>
     <AssociationSet Name="FK_PersonService_Person" Association="SpinnModel.Store.FK_PersonService_Person">
-      <End Role="Person" EntitySet="People" />
+      <End Role="People" EntitySet="People" />
       <End Role="PersonService" EntitySet="PersonService" />
     </AssociationSet>
     <AssociationSet Name="FK_PersonService_Service" Association="SpinnModel.Store.FK_PersonService_Service">
-      <End Role="Service" EntitySet="Services" />
+      <End Role="Services" EntitySet="Services" />
       <End Role="PersonService" EntitySet="PersonService" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillCategoryTagSkill_SkillCategoryTag" Association="SpinnModel.Store.FK_SkillCategoryTagSkill_SkillCategoryTag">
-      <End Role="SkillCategoryTag" EntitySet="SkillCategoryTags" />
-      <End Role="SkillCategoryTagSkill" EntitySet="SkillCategoryTagSkill" />
+    <AssociationSet Name="FK_PositionPersonPosition" Association="SpinnModel.Store.FK_PositionPersonPosition">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="PersonPositions" EntitySet="PersonPositions" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillCategoryTagSkill_Skill" Association="SpinnModel.Store.FK_SkillCategoryTagSkill_Skill">
-      <End Role="Skill" EntitySet="Skills" />
-      <End Role="SkillCategoryTagSkill" EntitySet="SkillCategoryTagSkill" />
+    <AssociationSet Name="FK_PositionProjectPosition" Association="SpinnModel.Store.FK_PositionProjectPosition">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="ProjectPositions" EntitySet="ProjectPositions" />
     </AssociationSet>
-    <AssociationSet Name="FK_ServicePosition_Service" Association="SpinnModel.Store.FK_ServicePosition_Service">
-      <End Role="Service" EntitySet="Services" />
-      <End Role="ServicePosition" EntitySet="ServicePosition" />
+    <AssociationSet Name="FK_ProjectProjectPerson" Association="SpinnModel.Store.FK_ProjectProjectPerson">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectPersons" EntitySet="ProjectPersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectProjectPosition" Association="SpinnModel.Store.FK_ProjectProjectPosition">
+      <End Role="ProjectPersons" EntitySet="ProjectPersons" />
+      <End Role="ProjectPositions" EntitySet="ProjectPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectProjectSkill" Association="SpinnModel.Store.FK_ProjectProjectSkill">
+      <End Role="ProjectPersons" EntitySet="ProjectPersons" />
+      <End Role="ProjectSkills" EntitySet="ProjectSkills" />
     </AssociationSet>
     <AssociationSet Name="FK_ServicePosition_Position" Association="SpinnModel.Store.FK_ServicePosition_Position">
-      <End Role="Position" EntitySet="Positions" />
+      <End Role="Positions" EntitySet="Positions" />
       <End Role="ServicePosition" EntitySet="ServicePosition" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillPosition_Skill" Association="SpinnModel.Store.FK_SkillPositions_Skill">
-      <End Role="Skill" EntitySet="Skills" />
-      <End Role="SkillPositions" EntitySet="SkillPosition" />
+    <AssociationSet Name="FK_ServicePosition_Service" Association="SpinnModel.Store.FK_ServicePosition_Service">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="ServicePosition" EntitySet="ServicePosition" />
     </AssociationSet>
-    <AssociationSet Name="FK_SkillPosition_Position" Association="SpinnModel.Store.FK_SkillPositions_Position">
-      <End Role="Position" EntitySet="Positions" />
-      <End Role="SkillPositions" EntitySet="SkillPosition" />
+    <AssociationSet Name="FK_SkillCategoryTagSkill_Skill" Association="SpinnModel.Store.FK_SkillCategoryTagSkill_Skill">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="SkillCategoryTagSkill" EntitySet="SkillCategoryTagSkill" />
     </AssociationSet>
-    <AssociationSet Name="PersonProject" Association="SpinnModel.Store.PersonProject">
-      <End Role="Person" EntitySet="People" />
-      <End Role="Project" EntitySet="ProjectPersons" />
+    <AssociationSet Name="FK_SkillCategoryTagSkill_SkillCategoryTag" Association="SpinnModel.Store.FK_SkillCategoryTagSkill_SkillCategoryTag">
+      <End Role="SkillCategoryTags" EntitySet="SkillCategoryTags" />
+      <End Role="SkillCategoryTagSkill" EntitySet="SkillCategoryTagSkill" />
     </AssociationSet>
-    <AssociationSet Name="SkillProjectSkill" Association="SpinnModel.Store.SkillProjectSkill">
-      <End Role="Skill" EntitySet="Skills" />
-      <End Role="ProjectSkill" EntitySet="ProjectSkills" />
+    <AssociationSet Name="FK_SkillCategoryTagSkillCategoryTag" Association="SpinnModel.Store.FK_SkillCategoryTagSkillCategoryTag">
+      <End Role="SkillCategoryTags" EntitySet="SkillCategoryTags" />
+      <End Role="SkillCategoryTags1" EntitySet="SkillCategoryTags" />
     </AssociationSet>
-    <AssociationSet Name="ProjectProjectSkill" Association="SpinnModel.Store.ProjectProjectSkill">
-      <End Role="Project" EntitySet="ProjectPersons" />
-      <End Role="ProjectSkill" EntitySet="ProjectSkills" />
+    <AssociationSet Name="FK_SkillPersonSkill" Association="SpinnModel.Store.FK_SkillPersonSkill">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="PersonSkills" EntitySet="PersonSkills" />
     </AssociationSet>
-    <AssociationSet Name="PositionProjectPosition" Association="SpinnModel.Store.PositionProjectPosition">
-      <End Role="Position" EntitySet="Positions" />
-      <End Role="ProjectPosition" EntitySet="ProjectPositions" />
+    <AssociationSet Name="FK_SkillPositions_Position" Association="SpinnModel.Store.FK_SkillPositions_Position">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="SkillPosition" EntitySet="SkillPosition" />
     </AssociationSet>
-    <AssociationSet Name="ProjectProjectPosition" Association="SpinnModel.Store.ProjectProjectPosition">
-      <End Role="Project" EntitySet="ProjectPersons" />
-      <End Role="ProjectPosition" EntitySet="ProjectPositions" />
+    <AssociationSet Name="FK_SkillPositions_Skill" Association="SpinnModel.Store.FK_SkillPositions_Skill">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="SkillPosition" EntitySet="SkillPosition" />
     </AssociationSet>
-    <AssociationSet Name="SkillCategoryTagSkillCategoryTag" Association="SpinnModel.Store.SkillCategoryTagSkillCategoryTag">
-      <End Role="SkillCategoryTag" EntitySet="SkillCategoryTags" />
-      <End Role="SkillCategoryTag1" EntitySet="SkillCategoryTags" />
-    </AssociationSet>
-    <AssociationSet Name="PersonDegree" Association="SpinnModel.Store.PersonDegree">
-      <End Role="Person" EntitySet="People" />
-      <End Role="Degree" EntitySet="Degrees" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonConvention_Person" Association="SpinnModel.Store.FK_PersonConvention_Person">
-      <End Role="Person" EntitySet="People" />
-      <End Role="PersonConvention" EntitySet="PersonConvention" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonConvention_Convention" Association="SpinnModel.Store.FK_PersonConvention_Convention">
-      <End Role="Convention" EntitySet="Conventions" />
-      <End Role="PersonConvention" EntitySet="PersonConvention" />
-    </AssociationSet>
-    <AssociationSet Name="ProjectProjectPerson" Association="SpinnModel.Store.ProjectProjectPerson">
-      <End Role="Project" EntitySet="Projects" />
-      <End Role="ProjectPerson" EntitySet="ProjectPersons" />
-    </AssociationSet>
-    <AssociationSet Name="PositionPersonPosition" Association="SpinnModel.Store.PositionPersonPosition">
-      <End Role="Position" EntitySet="Positions" />
-      <End Role="PersonPosition" EntitySet="PersonPositions" />
-    </AssociationSet>
-    <AssociationSet Name="PersonPersonPosition" Association="SpinnModel.Store.PersonPersonPosition">
-      <End Role="Person" EntitySet="People" />
-      <End Role="PersonPosition" EntitySet="PersonPositions" />
-    </AssociationSet>
-    <AssociationSet Name="SkillPersonSkill" Association="SpinnModel.Store.SkillPersonSkill">
-      <End Role="Skill" EntitySet="Skills" />
-      <End Role="PersonSkill" EntitySet="PersonSkills" />
-    </AssociationSet>
-    <AssociationSet Name="PersonPersonSkill" Association="SpinnModel.Store.PersonPersonSkill">
-      <End Role="Person" EntitySet="People" />
-      <End Role="PersonSkill" EntitySet="PersonSkills" />
-    </AssociationSet>
-    <AssociationSet Name="EmployerEmployee" Association="SpinnModel.Store.EmployerEmployee">
-      <End Role="Employer" EntitySet="Employers" />
-      <End Role="Employee" EntitySet="Employees" />
-    </AssociationSet>
-    <AssociationSet Name="PersonEmployee" Association="SpinnModel.Store.PersonEmployee">
-      <End Role="Person" EntitySet="People" />
-      <End Role="Employee" EntitySet="Employees" />
-    </AssociationSet>
-    <AssociationSet Name="CourseCourseStudent" Association="SpinnModel.Store.CourseCourseStudent">
-      <End Role="Course" EntitySet="Courses" />
-      <End Role="CourseStudent" EntitySet="CourseStudents" />
-    </AssociationSet>
-    <AssociationSet Name="PersonCourseStudent" Association="SpinnModel.Store.PersonCourseStudent">
-      <End Role="Person" EntitySet="People" />
-      <End Role="CourseStudent" EntitySet="CourseStudents" />
-    </AssociationSet>
-    <AssociationSet Name="ClientProject" Association="SpinnModel.Store.ClientProject">
-      <End Role="Client" EntitySet="Clients" />
-      <End Role="Project" EntitySet="Projects" />
+    <AssociationSet Name="FK_SkillProjectSkill" Association="SpinnModel.Store.FK_SkillProjectSkill">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="ProjectSkills" EntitySet="ProjectSkills" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conventions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseStudents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="Course_Id" Type="int" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Degrees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EndDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DegreeType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Employer_Id" Type="int" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="People">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
@@ -151,159 +214,23 @@
     <Property Name="Nationality" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Profile" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Services">
+  <EntityType Name="PersonConvention">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Persons_Id" />
+      <PropertyRef Name="Conventions_Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Skills">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Positions">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="SkillCategoryTags">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SkillParentCategoryTag_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectPersons">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="StartDate" Type="datetime" Nullable="false" />
-    <Property Name="EndDate" Type="datetime" Nullable="false" />
-    <Property Name="Person_Id" Type="int" Nullable="false" />
-    <Property Name="Project_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectSkills">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Importance" Type="int" Nullable="false" />
-    <Property Name="Skill_Id" Type="int" Nullable="false" />
-    <Property Name="ProjectPerson_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectPositions">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Importance" Type="int" Nullable="false" />
-    <Property Name="Position_Id" Type="int" Nullable="false" />
-    <Property Name="ProjectPerson_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Degrees">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EndDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DegreeType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Person_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Courses">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Conventions">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="StartDate" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Projects">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="StartDate" Type="datetime" Nullable="false" />
-    <Property Name="EndDate" Type="datetime" Nullable="false" />
-    <Property Name="Client_Id" Type="int" Nullable="false" />
+    <Property Name="Persons_Id" Type="int" Nullable="false" />
+    <Property Name="Conventions_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PersonPositions">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Importance" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Level" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Position_Id" Type="int" Nullable="false" />
     <Property Name="Person_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PersonSkills">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Importance" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Level" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Skill_Id" Type="int" Nullable="false" />
-    <Property Name="Person_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Employers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Employees">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="StartDate" Type="datetime" Nullable="false" />
-    <Property Name="EndDate" Type="datetime" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Employer_Id" Type="int" Nullable="false" />
-    <Property Name="Person_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CourseStudents">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="StartDate" Type="datetime" Nullable="false" />
-    <Property Name="Course_Id" Type="int" Nullable="false" />
-    <Property Name="Person_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Clients">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="PersonService">
     <Key>
@@ -313,13 +240,63 @@
     <Property Name="Persons_Id" Type="int" Nullable="false" />
     <Property Name="Services_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="SkillCategoryTagSkill">
+  <EntityType Name="PersonSkills">
     <Key>
-      <PropertyRef Name="SkillCategoryTags_Id" />
-      <PropertyRef Name="Skills_Id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="SkillCategoryTags_Id" Type="int" Nullable="false" />
-    <Property Name="Skills_Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Importance" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Level" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Skill_Id" Type="int" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectPersons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+    <Property Name="Project_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectPositions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Importance" Type="int" Nullable="false" />
+    <Property Name="Position_Id" Type="int" Nullable="false" />
+    <Property Name="ProjectPerson_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Client_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectSkills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Importance" Type="int" Nullable="false" />
+    <Property Name="Skill_Id" Type="int" Nullable="false" />
+    <Property Name="ProjectPerson_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ServicePosition">
     <Key>
@@ -329,7 +306,30 @@
     <Property Name="Services_Id" Type="int" Nullable="false" />
     <Property Name="Positions_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="SkillPositions">
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkillCategoryTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SkillParentCategoryTag_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkillCategoryTagSkill">
+    <Key>
+      <PropertyRef Name="SkillCategoryTags_Id" />
+      <PropertyRef Name="Skills_Id" />
+    </Key>
+    <Property Name="SkillCategoryTags_Id" Type="int" Nullable="false" />
+    <Property Name="Skills_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkillPosition">
     <Key>
       <PropertyRef Name="Skills_Id" />
       <PropertyRef Name="Positions_Id" />
@@ -337,223 +337,151 @@
     <Property Name="Skills_Id" Type="int" Nullable="false" />
     <Property Name="Positions_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PersonConvention">
+  <EntityType Name="Skills">
     <Key>
-      <PropertyRef Name="Persons_Id" />
-      <PropertyRef Name="Conventions_Id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Persons_Id" Type="int" Nullable="false" />
-    <Property Name="Conventions_Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <Association Name="PersonProject">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="Project" Type="SpinnModel.Store.ProjectPersons" Multiplicity="*" />
+  <Association Name="FK_ClientProject">
+    <End Role="Clients" Type="SpinnModel.Store.Clients" Multiplicity="1" />
+    <End Role="Projects" Type="SpinnModel.Store.Projects" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Person">
+      <Principal Role="Clients">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Project">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="SkillProjectSkill">
-    <End Role="Skill" Type="SpinnModel.Store.Skills" Multiplicity="1" />
-    <End Role="ProjectSkill" Type="SpinnModel.Store.ProjectSkills" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Skill">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProjectSkill">
-        <PropertyRef Name="Skill_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProjectProjectSkill">
-    <End Role="Project" Type="SpinnModel.Store.ProjectPersons" Multiplicity="1" />
-    <End Role="ProjectSkill" Type="SpinnModel.Store.ProjectSkills" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Project">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProjectSkill">
-        <PropertyRef Name="ProjectPerson_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PositionProjectPosition">
-    <End Role="Position" Type="SpinnModel.Store.Positions" Multiplicity="1" />
-    <End Role="ProjectPosition" Type="SpinnModel.Store.ProjectPositions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Position">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProjectPosition">
-        <PropertyRef Name="Position_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProjectProjectPosition">
-    <End Role="Project" Type="SpinnModel.Store.ProjectPersons" Multiplicity="1" />
-    <End Role="ProjectPosition" Type="SpinnModel.Store.ProjectPositions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Project">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProjectPosition">
-        <PropertyRef Name="ProjectPerson_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="SkillCategoryTagSkillCategoryTag">
-    <End Role="SkillCategoryTag" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="1" />
-    <End Role="SkillCategoryTag1" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SkillCategoryTag">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="SkillCategoryTag1">
-        <PropertyRef Name="SkillParentCategoryTag_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonDegree">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="Degree" Type="SpinnModel.Store.Degrees" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Degree">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProjectProjectPerson">
-    <End Role="Project" Type="SpinnModel.Store.Projects" Multiplicity="1" />
-    <End Role="ProjectPerson" Type="SpinnModel.Store.ProjectPersons" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Project">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProjectPerson">
-        <PropertyRef Name="Project_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PositionPersonPosition">
-    <End Role="Position" Type="SpinnModel.Store.Positions" Multiplicity="1" />
-    <End Role="PersonPosition" Type="SpinnModel.Store.PersonPositions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Position">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonPosition">
-        <PropertyRef Name="Position_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonPersonPosition">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="PersonPosition" Type="SpinnModel.Store.PersonPositions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonPosition">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="SkillPersonSkill">
-    <End Role="Skill" Type="SpinnModel.Store.Skills" Multiplicity="1" />
-    <End Role="PersonSkill" Type="SpinnModel.Store.PersonSkills" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Skill">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonSkill">
-        <PropertyRef Name="Skill_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonPersonSkill">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="PersonSkill" Type="SpinnModel.Store.PersonSkills" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonSkill">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="EmployerEmployee">
-    <End Role="Employer" Type="SpinnModel.Store.Employers" Multiplicity="1" />
-    <End Role="Employee" Type="SpinnModel.Store.Employees" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employer">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Employee">
-        <PropertyRef Name="Employer_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonEmployee">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="Employee" Type="SpinnModel.Store.Employees" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Employee">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CourseCourseStudent">
-    <End Role="Course" Type="SpinnModel.Store.Courses" Multiplicity="1" />
-    <End Role="CourseStudent" Type="SpinnModel.Store.CourseStudents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Course">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="CourseStudent">
-        <PropertyRef Name="Course_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PersonCourseStudent">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="CourseStudent" Type="SpinnModel.Store.CourseStudents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="CourseStudent">
-        <PropertyRef Name="Person_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientProject">
-    <End Role="Client" Type="SpinnModel.Store.Clients" Multiplicity="1" />
-    <End Role="Project" Type="SpinnModel.Store.Projects" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Client">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Project">
+      <Dependent Role="Projects">
         <PropertyRef Name="Client_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CourseCourseStudent">
+    <End Role="Courses" Type="SpinnModel.Store.Courses" Multiplicity="1" />
+    <End Role="CourseStudents" Type="SpinnModel.Store.CourseStudents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseStudents">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployerEmployee">
+    <End Role="Employers" Type="SpinnModel.Store.Employers" Multiplicity="1" />
+    <End Role="Employees" Type="SpinnModel.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonConvention_Convention">
+    <End Role="Conventions" Type="SpinnModel.Store.Conventions" Multiplicity="1" />
+    <End Role="PersonConvention" Type="SpinnModel.Store.PersonConvention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conventions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonConvention">
+        <PropertyRef Name="Conventions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonConvention_Person">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="PersonConvention" Type="SpinnModel.Store.PersonConvention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonConvention">
+        <PropertyRef Name="Persons_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonCourseStudent">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="CourseStudents" Type="SpinnModel.Store.CourseStudents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseStudents">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonDegree">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="Degrees" Type="SpinnModel.Store.Degrees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Degrees">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonEmployee">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="Employees" Type="SpinnModel.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonPersonPosition">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="PersonPositions" Type="SpinnModel.Store.PersonPositions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonPositions">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonPersonSkill">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="PersonSkills" Type="SpinnModel.Store.PersonSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonSkills">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonProject">
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="ProjectPersons" Type="SpinnModel.Store.ProjectPersons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectPersons">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PersonService_Person">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
+    <End Role="People" Type="SpinnModel.Store.People" Multiplicity="1" />
     <End Role="PersonService" Type="SpinnModel.Store.PersonService" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Person">
+      <Principal Role="People">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="PersonService">
@@ -562,10 +490,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_PersonService_Service">
+    <End Role="Services" Type="SpinnModel.Store.Services" Multiplicity="1" />
     <End Role="PersonService" Type="SpinnModel.Store.PersonService" Multiplicity="*" />
-    <End Role="Service" Type="SpinnModel.Store.Services" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="Service">
+      <Principal Role="Services">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="PersonService">
@@ -573,35 +501,83 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillCategoryTagSkill_SkillCategoryTag">
-    <End Role="SkillCategoryTag" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="1" />
-    <End Role="SkillCategoryTagSkill" Type="SpinnModel.Store.SkillCategoryTagSkill" Multiplicity="*" />
+  <Association Name="FK_PositionPersonPosition">
+    <End Role="Positions" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+    <End Role="PersonPositions" Type="SpinnModel.Store.PersonPositions" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SkillCategoryTag">
+      <Principal Role="Positions">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SkillCategoryTagSkill">
-        <PropertyRef Name="SkillCategoryTags_Id" />
+      <Dependent Role="PersonPositions">
+        <PropertyRef Name="Position_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillCategoryTagSkill_Skill">
-    <End Role="SkillCategoryTagSkill" Type="SpinnModel.Store.SkillCategoryTagSkill" Multiplicity="*" />
-    <End Role="Skill" Type="SpinnModel.Store.Skills" Multiplicity="1" />
+  <Association Name="FK_PositionProjectPosition">
+    <End Role="Positions" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+    <End Role="ProjectPositions" Type="SpinnModel.Store.ProjectPositions" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Skill">
+      <Principal Role="Positions">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SkillCategoryTagSkill">
-        <PropertyRef Name="Skills_Id" />
+      <Dependent Role="ProjectPositions">
+        <PropertyRef Name="Position_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectProjectPerson">
+    <End Role="Projects" Type="SpinnModel.Store.Projects" Multiplicity="1" />
+    <End Role="ProjectPersons" Type="SpinnModel.Store.ProjectPersons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectPersons">
+        <PropertyRef Name="Project_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectProjectPosition">
+    <End Role="ProjectPersons" Type="SpinnModel.Store.ProjectPersons" Multiplicity="1" />
+    <End Role="ProjectPositions" Type="SpinnModel.Store.ProjectPositions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectPersons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectPositions">
+        <PropertyRef Name="ProjectPerson_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectProjectSkill">
+    <End Role="ProjectPersons" Type="SpinnModel.Store.ProjectPersons" Multiplicity="1" />
+    <End Role="ProjectSkills" Type="SpinnModel.Store.ProjectSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectPersons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectSkills">
+        <PropertyRef Name="ProjectPerson_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicePosition_Position">
+    <End Role="Positions" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+    <End Role="ServicePosition" Type="SpinnModel.Store.ServicePosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServicePosition">
+        <PropertyRef Name="Positions_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ServicePosition_Service">
-    <End Role="Service" Type="SpinnModel.Store.Services" Multiplicity="1" />
+    <End Role="Services" Type="SpinnModel.Store.Services" Multiplicity="1" />
     <End Role="ServicePosition" Type="SpinnModel.Store.ServicePosition" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Service">
+      <Principal Role="Services">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ServicePosition">
@@ -609,63 +585,87 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ServicePosition_Position">
-    <End Role="ServicePosition" Type="SpinnModel.Store.ServicePosition" Multiplicity="*" />
-    <End Role="Position" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+  <Association Name="FK_SkillCategoryTagSkill_Skill">
+    <End Role="Skills" Type="SpinnModel.Store.Skills" Multiplicity="1" />
+    <End Role="SkillCategoryTagSkill" Type="SpinnModel.Store.SkillCategoryTagSkill" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Position">
+      <Principal Role="Skills">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="ServicePosition">
+      <Dependent Role="SkillCategoryTagSkill">
+        <PropertyRef Name="Skills_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SkillCategoryTagSkill_SkillCategoryTag">
+    <End Role="SkillCategoryTags" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="1" />
+    <End Role="SkillCategoryTagSkill" Type="SpinnModel.Store.SkillCategoryTagSkill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SkillCategoryTags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SkillCategoryTagSkill">
+        <PropertyRef Name="SkillCategoryTags_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SkillCategoryTagSkillCategoryTag">
+    <End Role="SkillCategoryTags" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="1" />
+    <End Role="SkillCategoryTags1" Type="SpinnModel.Store.SkillCategoryTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SkillCategoryTags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SkillCategoryTags1">
+        <PropertyRef Name="SkillParentCategoryTag_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SkillPersonSkill">
+    <End Role="Skills" Type="SpinnModel.Store.Skills" Multiplicity="1" />
+    <End Role="PersonSkills" Type="SpinnModel.Store.PersonSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonSkills">
+        <PropertyRef Name="Skill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SkillPositions_Position">
+    <End Role="Positions" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+    <End Role="SkillPosition" Type="SpinnModel.Store.SkillPosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SkillPosition">
         <PropertyRef Name="Positions_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SkillPositions_Skill">
-    <End Role="Skill" Type="SpinnModel.Store.Skills" Multiplicity="1" />
-    <End Role="SkillPositions" Type="SpinnModel.Store.SkillPositions" Multiplicity="*" />
+    <End Role="Skills" Type="SpinnModel.Store.Skills" Multiplicity="1" />
+    <End Role="SkillPosition" Type="SpinnModel.Store.SkillPosition" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Skill">
+      <Principal Role="Skills">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SkillPositions">
+      <Dependent Role="SkillPosition">
         <PropertyRef Name="Skills_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SkillPositions_Position">
-    <End Role="SkillPositions" Type="SpinnModel.Store.SkillPositions" Multiplicity="*" />
-    <End Role="Position" Type="SpinnModel.Store.Positions" Multiplicity="1" />
+  <Association Name="FK_SkillProjectSkill">
+    <End Role="Skills" Type="SpinnModel.Store.Skills" Multiplicity="1" />
+    <End Role="ProjectSkills" Type="SpinnModel.Store.ProjectSkills" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Position">
+      <Principal Role="Skills">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SkillPositions">
-        <PropertyRef Name="Positions_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonConvention_Person">
-    <End Role="Person" Type="SpinnModel.Store.People" Multiplicity="1" />
-    <End Role="PersonConvention" Type="SpinnModel.Store.PersonConvention" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonConvention">
-        <PropertyRef Name="Persons_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonConvention_Convention">
-    <End Role="PersonConvention" Type="SpinnModel.Store.PersonConvention" Multiplicity="*" />
-    <End Role="Convention" Type="SpinnModel.Store.Conventions" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Convention">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonConvention">
-        <PropertyRef Name="Conventions_Id" />
+      <Dependent Role="ProjectSkills">
+        <PropertyRef Name="Skill_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

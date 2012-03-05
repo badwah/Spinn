@@ -11,5 +11,12 @@ namespace Spinn.Repository
             uContainer.LoadConfiguration();
             return uContainer.Resolve<IClientRepository>();
         }
+
+        public static IProjectRepository GetProjectRepository()
+        {
+            IUnityContainer uContainer = new UnityContainer();
+            uContainer.LoadConfiguration();
+            return uContainer.Resolve<IProjectRepository>();
+        }
     }
 }

@@ -25,9 +25,9 @@ namespace Spinn.Model
         public System.DateTime StartDate { get; set; }
         public System.DateTime EndDate { get; set; }
     
-        public virtual Person Person { get; set; }
-        public virtual ICollection<ProjectSkill> ProjectSkills { get; set; }
-        public virtual ICollection<ProjectPosition> ProjectPositions { get; set; }
-        public virtual Project Project { get; set; }
+        public Person Person { get; set; }
+        public ICollection<ProjectSkill> ProjectSkills { get; set; }
+        public ICollection<ProjectPosition> ProjectPositions { get; set; }
+        public Project Project { get; set; }
     }
 }

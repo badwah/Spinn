@@ -20,6 +20,6 @@ namespace Spinn.Model
         public string EndDate { get; set; }
         public string DegreeType { get; set; }
     
-        public virtual Person Person { get; set; }
+        public Person Person { get; set; }
     }
 }

@@ -23,6 +23,6 @@ namespace Spinn.Model
         public string Name { get; set; }
         public string Description { get; set; }
     
-        public virtual ICollection<CourseStudent> CourseStudents { get; set; }
+        public ICollection<CourseStudent> CourseStudents { get; set; }
     }
 }

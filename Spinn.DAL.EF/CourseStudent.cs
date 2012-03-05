@@ -17,7 +17,7 @@ namespace Spinn.Model
         public int Id { get; set; }
         public System.DateTime StartDate { get; set; }
     
-        public virtual Course Course { get; set; }
-        public virtual Person Person { get; set; }
+        public Course Course { get; set; }
+        public Person Person { get; set; }
     }
 }

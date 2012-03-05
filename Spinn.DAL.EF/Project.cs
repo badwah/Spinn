@@ -14,18 +14,12 @@ namespace Spinn.Model
     
     public partial class Project
     {
-        public Project()
-        {
-            this.ProjectPersons = new HashSet<ProjectPerson>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
-        public virtual ICollection<ProjectPerson> ProjectPersons { get; set; }
-        public virtual Client Client { get; set; }
+        public Client Client { get; set; }
     }
 }

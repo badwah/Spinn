@@ -18,10 +18,10 @@ namespace Spinn.DAL.EF.Repository
             efUnitOfWork = new EFUnitOfWork();
         }
 
-        private readonly EFUnitOfWork efUnitOfWork;
+        protected readonly EFUnitOfWork efUnitOfWork;
        
-        private IDbSet<T> objectset;
-        private IDbSet<T> ObjectSet
+        protected IDbSet<T> objectset;
+        protected IDbSet<T> ObjectSet
         {
             get { return objectset ?? (objectset = efUnitOfWork.Context.Set<T>()); }
         }

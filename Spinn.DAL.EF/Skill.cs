@@ -26,9 +26,9 @@ namespace Spinn.Model
         public string Name { get; set; }
         public string Description { get; set; }
     
-        public virtual ICollection<SkillCategoryTag> SkillCategoryTags { get; set; }
-        public virtual ICollection<Position> Positions { get; set; }
-        public virtual ICollection<ProjectSkill> ProjectSkills { get; set; }
-        public virtual ICollection<PersonSkill> PersonSkills { get; set; }
+        public ICollection<SkillCategoryTag> SkillCategoryTags { get; set; }
+        public ICollection<Position> Positions { get; set; }
+        public ICollection<ProjectSkill> ProjectSkills { get; set; }
+        public ICollection<PersonSkill> PersonSkills { get; set; }
     }
 }

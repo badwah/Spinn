@@ -24,6 +24,6 @@ namespace Spinn.Model
         public string Description { get; set; }
         public string StartDate { get; set; }
     
-        public virtual ICollection<Person> Persons { get; set; }
+        public ICollection<Person> Persons { get; set; }
     }
 }

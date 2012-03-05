@@ -22,8 +22,8 @@ namespace Spinn.Model
     
         public int Id { get; set; }
     
-        public virtual ICollection<Skill> Skills { get; set; }
-        public virtual ICollection<SkillCategoryTag> SkillChilldCategoryTags { get; set; }
-        public virtual SkillCategoryTag SkillParentCategoryTag { get; set; }
+        public ICollection<Skill> Skills { get; set; }
+        public ICollection<SkillCategoryTag> SkillChilldCategoryTags { get; set; }
+        public SkillCategoryTag SkillParentCategoryTag { get; set; }
     }
 }

@@ -40,13 +40,13 @@ namespace Spinn.Model
         public string Nationality { get; set; }
         public string Profile { get; set; }
     
-        public virtual ICollection<Service> Services { get; set; }
-        public virtual ICollection<ProjectPerson> ProjectPersons { get; set; }
-        public virtual ICollection<Degree> Degrees { get; set; }
-        public virtual ICollection<Convention> Conventions { get; set; }
-        public virtual ICollection<PersonPosition> PersonPositions { get; set; }
-        public virtual ICollection<PersonSkill> PersonSkills { get; set; }
-        public virtual ICollection<Employee> Employees { get; set; }
-        public virtual ICollection<CourseStudent> CourseStudents { get; set; }
+        public ICollection<Service> Services { get; set; }
+        public ICollection<ProjectPerson> ProjectPersons { get; set; }
+        public ICollection<Degree> Degrees { get; set; }
+        public ICollection<Convention> Conventions { get; set; }
+        public ICollection<PersonPosition> PersonPositions { get; set; }
+        public ICollection<PersonSkill> PersonSkills { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+        public ICollection<CourseStudent> CourseStudents { get; set; }
     }
 }

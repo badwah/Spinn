@@ -1,0 +1,58 @@
+﻿@using System.Web.Script.Serialization
+@{
+    ViewBag.Title = "Index";
+}
+<script type="text/javascript">
+
+
+     var viewModel = {};
+
+    $.getJSON('Projects/List', function (result) {
+        viewModel.projects = ko.mapping.fromJS(result);
+        ko.applyBindings(viewModel);
+    });
+
+/*var viewModel = {
+    projects : ko.observableArray(initialData)
+};
+ 
+ko.applyBindings(document.body, viewModel);*/
+
+</script>
+<h2>
+    Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                StartDate
+            </th>
+            <th>
+                EndDate
+            </th>
+            <th>
+                Client
+            </th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: projects">
+        <tr>
+            <td data-bind="text: Name">
+            </td>
+            <td data-bind="text: Description">
+            </td>
+            <td data-bind="text: StartDate">
+            </td>
+            <td data-bind="text: EndDate">
+            </td>
+            <td data-bind="text: Client.Name">
+            </td>
+        </tr>
+    </tbody>
+</table>

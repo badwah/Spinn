@@ -18,7 +18,7 @@ namespace Spinn.Model
         public string Importance { get; set; }
         public string Level { get; set; }
     
-        public virtual Position Position { get; set; }
-        public virtual Person Person { get; set; }
+        public Position Position { get; set; }
+        public Person Person { get; set; }
     }
 }
