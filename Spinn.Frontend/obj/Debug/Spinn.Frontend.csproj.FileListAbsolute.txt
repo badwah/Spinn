@@ -18,3 +18,5 @@ C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.Unity.xml
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.ServiceLocation.pdb
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.ServiceLocation.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.EF.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.EF.pdb

@@ -101,6 +101,7 @@ namespace Spinn.Frontend.Controllers
         {
             var client = new Client {Id = id};
             clientRepository.Delete(client);
+            clientRepository.UnitOfWork.Commit();
             return RedirectToAction("Index");
         }
 
