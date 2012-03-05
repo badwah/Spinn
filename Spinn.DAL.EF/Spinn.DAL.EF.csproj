@@ -92,8 +92,14 @@
       <Project>{B9120EDB-ABEC-4B25-8955-BE10F7670174}</Project>
       <Name>Spinn.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Spinn.Repository\Spinn.Repository.csproj">
+      <Project>{5327A3DF-81C4-4F77-8901-142159CEFF9E}</Project>
+      <Name>Spinn.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SpinnModel.edmx.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

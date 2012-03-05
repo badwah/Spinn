@@ -46,5 +46,14 @@ namespace Spinn.Stub
        
 
         #endregion
+
+        #region Implementation of IDisposable
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

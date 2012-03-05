@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpinnModelStoreContainer" CdmEntityContainer="SpinnModelContainer">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gsm" ColumnName="Gsm" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Service)">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Skill)">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Position)">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SkillCategoryTags">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.SkillCategoryTag)">
+        <MappingFragment StoreEntitySet="SkillCategoryTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPersons">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.ProjectPerson)">
+        <MappingFragment StoreEntitySet="ProjectPersons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectSkills">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.ProjectSkill)">
+        <MappingFragment StoreEntitySet="ProjectSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPositions">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.ProjectPosition)">
+        <MappingFragment StoreEntitySet="ProjectPositions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Degrees">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Degree)">
+        <MappingFragment StoreEntitySet="Degrees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DegreeType" ColumnName="DegreeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Course)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conventions">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Convention)">
+        <MappingFragment StoreEntitySet="Conventions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonPositions">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.PersonPosition)">
+        <MappingFragment StoreEntitySet="PersonPositions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonSkills">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.PersonSkill)">
+        <MappingFragment StoreEntitySet="PersonSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Employer)">
+        <MappingFragment StoreEntitySet="Employers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseStudents">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.CourseStudent)">
+        <MappingFragment StoreEntitySet="CourseStudents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IsTypeOf(SpinnModel.Client)">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PersonService" TypeName="SpinnModel.PersonService" StoreEntitySet="PersonService">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Persons_Id" />
+      </EndProperty>
+      <EndProperty Name="Service">
+        <ScalarProperty Name="Id" ColumnName="Services_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillCategoryTagSkill" TypeName="SpinnModel.SkillCategoryTagSkill" StoreEntitySet="SkillCategoryTagSkill">
+      <EndProperty Name="SkillCategoryTag">
+        <ScalarProperty Name="Id" ColumnName="SkillCategoryTags_Id" />
+      </EndProperty>
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="Id" ColumnName="Skills_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ServicePosition" TypeName="SpinnModel.ServicePosition" StoreEntitySet="ServicePosition">
+      <EndProperty Name="Service">
+        <ScalarProperty Name="Id" ColumnName="Services_Id" />
+      </EndProperty>
+      <EndProperty Name="Position">
+        <ScalarProperty Name="Id" ColumnName="Positions_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillPosition" TypeName="SpinnModel.SkillPositions" StoreEntitySet="SkillPosition">
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="Id" ColumnName="Skills_Id" />
+      </EndProperty>
+      <EndProperty Name="Position">
+        <ScalarProperty Name="Id" ColumnName="Positions_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonProject" TypeName="SpinnModel.PersonProject" StoreEntitySet="ProjectPersons">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="Project">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillProjectSkill" TypeName="SpinnModel.SkillProjectSkill" StoreEntitySet="ProjectSkills">
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="Id" ColumnName="Skill_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectSkill">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectProjectSkill" TypeName="SpinnModel.ProjectProjectSkill" StoreEntitySet="ProjectSkills">
+      <EndProperty Name="Project">
+        <ScalarProperty Name="Id" ColumnName="ProjectPerson_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectSkill">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PositionProjectPosition" TypeName="SpinnModel.PositionProjectPosition" StoreEntitySet="ProjectPositions">
+      <EndProperty Name="Position">
+        <ScalarProperty Name="Id" ColumnName="Position_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectPosition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectProjectPosition" TypeName="SpinnModel.ProjectProjectPosition" StoreEntitySet="ProjectPositions">
+      <EndProperty Name="Project">
+        <ScalarProperty Name="Id" ColumnName="ProjectPerson_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectPosition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillCategoryTagSkillCategoryTag" TypeName="SpinnModel.SkillCategoryTagSkillCategoryTag" StoreEntitySet="SkillCategoryTags">
+      <EndProperty Name="SkillCategoryTag">
+        <ScalarProperty Name="Id" ColumnName="SkillParentCategoryTag_Id" />
+      </EndProperty>
+      <EndProperty Name="SkillCategoryTag1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonDegree" TypeName="SpinnModel.PersonDegree" StoreEntitySet="Degrees">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="Degree">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonConvention" TypeName="SpinnModel.PersonConvention" StoreEntitySet="PersonConvention">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Persons_Id" />
+      </EndProperty>
+      <EndProperty Name="Convention">
+        <ScalarProperty Name="Id" ColumnName="Conventions_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectProjectPerson" TypeName="SpinnModel.ProjectProjectPerson" StoreEntitySet="ProjectPersons">
+      <EndProperty Name="Project">
+        <ScalarProperty Name="Id" ColumnName="Project_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectPerson">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PositionPersonPosition" TypeName="SpinnModel.PositionPersonPosition" StoreEntitySet="PersonPositions">
+      <EndProperty Name="Position">
+        <ScalarProperty Name="Id" ColumnName="Position_Id" />
+      </EndProperty>
+      <EndProperty Name="PersonPosition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonPersonPosition" TypeName="SpinnModel.PersonPersonPosition" StoreEntitySet="PersonPositions">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="PersonPosition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SkillPersonSkill" TypeName="SpinnModel.SkillPersonSkill" StoreEntitySet="PersonSkills">
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="Id" ColumnName="Skill_Id" />
+      </EndProperty>
+      <EndProperty Name="PersonSkill">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonPersonSkill" TypeName="SpinnModel.PersonPersonSkill" StoreEntitySet="PersonSkills">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="PersonSkill">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployerEmployee" TypeName="SpinnModel.EmployerEmployee" StoreEntitySet="Employees">
+      <EndProperty Name="Employer">
+        <ScalarProperty Name="Id" ColumnName="Employer_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonEmployee" TypeName="SpinnModel.PersonEmployee" StoreEntitySet="Employees">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseCourseStudent" TypeName="SpinnModel.CourseCourseStudent" StoreEntitySet="CourseStudents">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="Id" ColumnName="Course_Id" />
+      </EndProperty>
+      <EndProperty Name="CourseStudent">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonCourseStudent" TypeName="SpinnModel.PersonCourseStudent" StoreEntitySet="CourseStudents">
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Person_Id" />
+      </EndProperty>
+      <EndProperty Name="CourseStudent">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClientProject" TypeName="SpinnModel.ClientProject" StoreEntitySet="Projects">
+      <EndProperty Name="Client">
+        <ScalarProperty Name="Id" ColumnName="Client_Id" />
+      </EndProperty>
+      <EndProperty Name="Project">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

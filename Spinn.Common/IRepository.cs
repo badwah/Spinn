@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Spinn.Common
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> :IDisposable where T : class
     {
         IUnitOfWork UnitOfWork { get; }
         IQueryable<T> All();

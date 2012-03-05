@@ -23,14 +23,7 @@ namespace Spinn.DAL.EF.Repository
         private IDbSet<T> objectset;
         private IDbSet<T> ObjectSet
         {
-            get
-            {
-                if (objectset == null)
-                {
-                    objectset = efUnitOfWork.Context.Set<T>();
-                }
-                return objectset;
-            }
+            get { return objectset ?? (objectset = efUnitOfWork.Context.Set<T>()); }
         }
 
         public virtual IQueryable<T> All()
@@ -54,10 +47,35 @@ namespace Spinn.DAL.EF.Repository
             efUnitOfWork.Context.Entry(updatedItem).State = EntityState.Modified;
         }
 
+       
         public void Delete(T entity)
         {
-            ObjectSet.Remove(entity);
+            ObjectSet.Attach(entity);
+            efUnitOfWork.Context.Entry(entity).State = EntityState.Deleted;
         }
 
+        #region Implementation of IDisposable
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    efUnitOfWork.Context.Dispose();
+                }
+            }
+            disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }

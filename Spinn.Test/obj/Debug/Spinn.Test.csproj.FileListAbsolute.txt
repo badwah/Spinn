@@ -22,3 +22,7 @@ C:\TFS\Spinn\Code\Spinn\Spinn.Test\obj\Debug\Spinn.Test.dll
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\obj\Debug\Spinn.Test.pdb
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.Stub.dll
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.Stub.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.EF.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\EntityFramework.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.EF.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\EntityFramework.xml

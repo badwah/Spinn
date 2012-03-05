@@ -61,6 +61,10 @@
       <Project>{DAEE09CE-B69C-4AAD-9A83-0A6710EF31A4}</Project>
       <Name>Spinn.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Spinn.DAL.EF\Spinn.DAL.EF.csproj">
+      <Project>{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}</Project>
+      <Name>Spinn.DAL.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Spinn.Model\Spinn.Model.csproj">
       <Project>{B9120EDB-ABEC-4B25-8955-BE10F7670174}</Project>
       <Name>Spinn.Model</Name>
