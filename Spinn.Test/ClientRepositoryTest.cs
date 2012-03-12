@@ -13,7 +13,7 @@ namespace Spinn.Test
         [TestMethod]
         public void GetAllTest()
         {
-            var clientRepo = RepositoryFactory.GetClientRepository();
+            var clientRepo = new RepositoryFactory<IClientRepository>().ResolveRepository();
             var allClients = clientRepo.All();
             Assert.IsTrue(allClients.Count()>0);
         }

@@ -17,7 +17,7 @@ namespace Spinn.Frontend.Controllers
         private readonly IClientRepository clientRepository;
         public ClientsController()
         {
-            clientRepository = RepositoryFactory.GetClientRepository();
+            clientRepository = new RepositoryFactory<IClientRepository>().ResolveRepository();
         }
 
         //

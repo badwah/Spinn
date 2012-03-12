@@ -1,0 +1,38 @@
+﻿@model Spinn.Frontend.Models.Menu
+
+<div id="ddtopmenubar" class="mattblackmenu">
+<ul>
+    <li><a href="@Model.InfiniteMenuItems.Url" rel="@Model.InfiniteMenuItems.NextMenuItemTitle">@Model.InfiniteMenuItems.Title)</a></li>
+    @foreach (var item in Model.Services)
+    {
+        <li><a href="@item.Name">@item.Name</a></li>
+    }</ul>
+</div>
+
+<script type="text/javascript">
+    ddlevelsmenu.setup("ddtopmenubar", "topbar") //ddlevelsmenu.setup("mainmenuid", "topbar|sidebar")
+</script>
+
+
+    @if (Model.InfiniteMenuItems.NextMenuItem != null)
+    {
+        <ul id="@Model.InfiniteMenuItems.NextMenuItemTitle" class="ddsubmenustyle">
+        <li><a href="@Model.InfiniteMenuItems.NextMenuItem.Url">@Model.InfiniteMenuItems.NextMenuItemTitle</a>
+        @{
+            var menuItem = @Model.InfiniteMenuItems.NextMenuItem.NextMenuItem;
+            var menuCounter = 0;
+            while (menuItem != null)
+            {
+                <ul> <li>     <a href="@menuItem.Url">@menuItem.Title</a></li>
+                    menuItem = menuItem.NextMenuItem;
+                    menuCounter++;
+                    }
+                    for(var i = 0;i < menuCounter;i++) {
+                </ul>
+            }
+        }
+        </li>
+        </ul>
+    }
+
+

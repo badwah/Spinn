@@ -12,7 +12,7 @@ namespace Spinn.Frontend.Controllers
          private readonly IProjectRepository projectRepository;
          public ProjectsController()
         {
-            projectRepository = RepositoryFactory.GetProjectRepository();
+            projectRepository = new RepositoryFactory<IProjectRepository>().ResolveRepository();
         }
         public JsonResult List()
         {

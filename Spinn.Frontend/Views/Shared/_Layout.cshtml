@@ -8,9 +8,28 @@
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/knockout.js")" type="text/javascript"></script>
      <script src="@Url.Content("~/Scripts/knockout.mapping-latest.js")" type="text/javascript"></script>
+     
+<link rel="stylesheet" type="text/css" href="../../Scripts/ddlevelsfiles/ddlevelsmenu-base.css" />
+<link rel="stylesheet" type="text/css" href="../../Scripts/ddlevelsfiles/ddlevelsmenu-topbar.css" />
+<link rel="stylesheet" type="text/css" href="../../Scripts/ddlevelsfiles/ddlevelsmenu-sidebar.css" />
+ 
+<script type="text/javascript" src="../../Scripts/ddlevelsfiles/ddlevelsmenu.js">
+
+    /***********************************************
+    * All Levels Navigational Menu- (c) Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+ 
+</script>
+
+
 </head>
 
 <body>
+    <h3>Spinn</h3>
+    @Html.Partial("_MenuViewUserControl")
+
     @RenderBody()
 </body>
 </html>

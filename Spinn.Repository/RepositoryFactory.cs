@@ -3,20 +3,15 @@ using Microsoft.Practices.Unity.Configuration;
 
 namespace Spinn.Repository
 {
-    public static class RepositoryFactory
+    public class RepositoryFactory<T>
     {
-        public static IClientRepository GetClientRepository()
+       
+        public T ResolveRepository()
         {
             IUnityContainer uContainer = new UnityContainer();
             uContainer.LoadConfiguration();
-            return uContainer.Resolve<IClientRepository>();
+            return uContainer.Resolve<T>();
         }
-
-        public static IProjectRepository GetProjectRepository()
-        {
-            IUnityContainer uContainer = new UnityContainer();
-            uContainer.LoadConfiguration();
-            return uContainer.Resolve<IProjectRepository>();
-        }
+        
     }
 }
