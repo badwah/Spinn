@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Spinn.Model;
 using Spinn.Repository;
 
 namespace Spinn.Test
@@ -16,6 +17,16 @@ namespace Spinn.Test
             var clientRepo = new RepositoryFactory<IClientRepository>().ResolveRepository();
             var allClients = clientRepo.All();
             Assert.IsTrue(allClients.Count()>0);
+        }
+
+        [TestMethod]
+        public void AddTest()
+        {
+           
+            var clientRepo = new RepositoryFactory<IClientRepository>().ResolveRepository();
+            var count = clientRepo.All().Count();
+             clientRepo.Add(new Client{Name="UNITTEST",Description = "UNITTEST"});
+            Assert.IsTrue(count+1 == clientRepo.All().Count());
         }
     }
 }

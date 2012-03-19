@@ -26,3 +26,12 @@ C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.EF.dll
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\EntityFramework.dll
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.EF.pdb
 C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\EntityFramework.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\hibernate.cfg.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.NHibernate.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\NHibernate.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Iesi.Collections.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Spinn.DAL.NHibernate.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\NHibernate.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\NHibernate.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Iesi.Collections.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Test\bin\Debug\Iesi.Collections.xml
