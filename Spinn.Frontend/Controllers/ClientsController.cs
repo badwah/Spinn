@@ -79,6 +79,7 @@ namespace Spinn.Frontend.Controllers
             if (ModelState.IsValid)
             {
                 clientRepository.Update(client);
+                clientRepository.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
             return View(client);

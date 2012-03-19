@@ -26,7 +26,8 @@ namespace Spinn.Test
             var clientRepo = new RepositoryFactory<IClientRepository>().ResolveRepository();
             var count = clientRepo.All().Count();
              clientRepo.Add(new Client{Name="UNITTEST",Description = "UNITTEST"});
-            Assert.IsTrue(count+1 == clientRepo.All().Count());
+            clientRepo.UnitOfWork.Commit();
+             Assert.IsTrue(count + 1 == new RepositoryFactory<IClientRepository>().ResolveRepository().All().Count());
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using NHibernate;
+using NHibernate.Linq;
 using NHibernate.Cfg;
 using Spinn.Common;
 using Spinn.Model;
@@ -13,13 +14,21 @@ namespace Spinn.DAL.NHibernate.Repository
 {
     public class ClientRepository : IClientRepository
     {
-       
+        private ISession session;
+        private NHibernateUnitOfWork nHibernateUnitOfWork;
+
+        public ClientRepository()
+        {
+            session = NHibernateHelper<Client>.OpenSession();
+            session.FlushMode = FlushMode.Commit;
+            nHibernateUnitOfWork = new NHibernateUnitOfWork(session.BeginTransaction());
+        }
 
         #region Implementation of IDisposable
 
         public void Dispose()
         {
-           //TODO
+          session.Dispose();
         }
 
         #endregion
@@ -28,46 +37,35 @@ namespace Spinn.DAL.NHibernate.Repository
 
         public IUnitOfWork UnitOfWork
         {
-            get { throw new NotImplementedException(); }
+            get { return nHibernateUnitOfWork; }
         }
 
         public IQueryable<Client> All()
         {
-            using (ISession session = NHibernateHelper<Client>.OpenSession())
-            {
-                var result = session.CreateCriteria<Client>().List<Client>();
-                return result.AsQueryable();
-            }
+            var result = session.CreateCriteria<Client>().List<Client>();
+            return result.AsQueryable();
         }
 
         public IQueryable<Client> Where(Expression<Func<Client, bool>> expression)
         {
-            throw new NotImplementedException();
+             return session.Query<Client>().Where(expression);
+            
         }
 
         public void Add(Client newItem)
         {
-            using (ISession session = NHibernateHelper<Client>.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
-            {
-                session.Save(newItem);
-                transaction.Commit();
-            }
+            session.Save(newItem);
         }
 
         public void Update(Client updatedItem)
         {
-            throw new NotImplementedException();
+            session.Update(updatedItem);
+            
         }
 
         public void Delete(Client deletedItem)
         {
-            using (ISession session = NHibernateHelper<Client>.OpenSession())
-            using (ITransaction transaction = session.BeginTransaction())
-            {
-                session.Delete(deletedItem);
-                transaction.Commit();
-            }
+            session.Delete(deletedItem);
         }
 
         #endregion

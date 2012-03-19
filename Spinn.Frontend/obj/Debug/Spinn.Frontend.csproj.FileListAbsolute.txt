@@ -20,3 +20,12 @@ C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.ServiceLocation.p
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Microsoft.Practices.ServiceLocation.xml
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.EF.dll
 C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.EF.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\hibernate.cfg.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.NHibernate.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\NHibernate.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Iesi.Collections.dll
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Spinn.DAL.NHibernate.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\NHibernate.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\NHibernate.xml
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Iesi.Collections.pdb
+C:\TFS\Spinn\Code\Spinn\Spinn.Frontend\bin\Iesi.Collections.xml

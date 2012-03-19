@@ -5,7 +5,7 @@
                    default-lazy="false">
 
   <!-- more mapping info here -->
-  <class name="Client">
+  <class name="Client" table="Clients">
     <id name="Id">
       <generator class="native" />
     </id>

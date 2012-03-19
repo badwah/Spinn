@@ -170,6 +170,10 @@
       <Project>{BCBD1607-A006-4AF8-A5A5-FC9776592EFB}</Project>
       <Name>Spinn.DAL.EF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Spinn.DAL.NHibernate\Spinn.DAL.NHibernate.csproj">
+      <Project>{E08F3A94-CF7E-4E80-8A0C-A99184B7801E}</Project>
+      <Name>Spinn.DAL.NHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Spinn.Model\Spinn.Model.csproj">
       <Project>{B9120EDB-ABEC-4B25-8955-BE10F7670174}</Project>
       <Name>Spinn.Model</Name>
