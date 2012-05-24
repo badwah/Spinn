@@ -24,6 +24,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Stub", "Spinn.Stub\Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.DAL.NHibernate", "Spinn.DAL.NHibernate\Spinn.DAL.NHibernate.csproj", "{E08F3A94-CF7E-4E80-8A0C-A99184B7801E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Core", "Spinn.Core\Spinn.Core.csproj", "{74009EE7-6C5A-4475-BF7F-58DCA8A7362D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Core.Facade", "Spinn.Core.Facade\Spinn.Core.Facade.csproj", "{F70054F0-F5C1-4229-ADD1-35F21A7AF5D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External References", "External References", "{57B0A4F4-33AD-48ED-8B7C-A4F3F3EA9742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Core.Calculators", "Spinn.Core.Calculators\Spinn.Core.Calculators.csproj", "{1EA3D6F8-C14E-4599-BF5D-32C754E534F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spinn.Database", "Spinn.Database\Spinn.Database.csproj", "{5B4A66F6-76A2-4EA1-82DB-03F2FDF0D653}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Spinn.vsmdi
@@ -65,11 +75,27 @@ Global
 		{E08F3A94-CF7E-4E80-8A0C-A99184B7801E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E08F3A94-CF7E-4E80-8A0C-A99184B7801E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E08F3A94-CF7E-4E80-8A0C-A99184B7801E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74009EE7-6C5A-4475-BF7F-58DCA8A7362D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74009EE7-6C5A-4475-BF7F-58DCA8A7362D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74009EE7-6C5A-4475-BF7F-58DCA8A7362D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74009EE7-6C5A-4475-BF7F-58DCA8A7362D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70054F0-F5C1-4229-ADD1-35F21A7AF5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70054F0-F5C1-4229-ADD1-35F21A7AF5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70054F0-F5C1-4229-ADD1-35F21A7AF5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70054F0-F5C1-4229-ADD1-35F21A7AF5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA3D6F8-C14E-4599-BF5D-32C754E534F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA3D6F8-C14E-4599-BF5D-32C754E534F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA3D6F8-C14E-4599-BF5D-32C754E534F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA3D6F8-C14E-4599-BF5D-32C754E534F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B4A66F6-76A2-4EA1-82DB-03F2FDF0D653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B4A66F6-76A2-4EA1-82DB-03F2FDF0D653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B4A66F6-76A2-4EA1-82DB-03F2FDF0D653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B4A66F6-76A2-4EA1-82DB-03F2FDF0D653}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

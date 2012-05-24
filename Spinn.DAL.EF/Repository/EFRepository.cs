@@ -11,19 +11,18 @@ namespace Spinn.DAL.EF.Repository
 {
     public class EFRepository<T> : IRepository<T> where T : class
     {
-        public IUnitOfWork UnitOfWork { get { return efUnitOfWork; } }
-
-        public EFRepository()
+        public IUnitOfWork UnitOfWork
         {
-            efUnitOfWork = new EFUnitOfWork();
+            set { EfUnitOfWork = value as EFUnitOfWork; }
+            get { return EfUnitOfWork; }
         }
-
-        protected readonly EFUnitOfWork efUnitOfWork;
        
-        protected IDbSet<T> objectset;
+        protected EFUnitOfWork EfUnitOfWork;
+       
+        protected IDbSet<T> objectSet;
         protected IDbSet<T> ObjectSet
         {
-            get { return objectset ?? (objectset = efUnitOfWork.Context.Set<T>()); }
+            get { return objectSet ?? (objectSet = EfUnitOfWork.Context.Set<T>()); }
         }
 
         public virtual IQueryable<T> All()
@@ -44,14 +43,14 @@ namespace Spinn.DAL.EF.Repository
         public void Update(T updatedItem)
         {
             ObjectSet.Attach(updatedItem);
-            efUnitOfWork.Context.Entry(updatedItem).State = EntityState.Modified;
+            EfUnitOfWork.Context.Entry(updatedItem).State = EntityState.Modified;
         }
 
        
         public void Delete(T entity)
         {
             ObjectSet.Attach(entity);
-            efUnitOfWork.Context.Entry(entity).State = EntityState.Deleted;
+            EfUnitOfWork.Context.Entry(entity).State = EntityState.Deleted;
         }
 
         #region Implementation of IDisposable
@@ -64,7 +63,7 @@ namespace Spinn.DAL.EF.Repository
             {
                 if (disposing)
                 {
-                    efUnitOfWork.Context.Dispose();
+                    EfUnitOfWork.Context.Dispose();
                 }
             }
             disposed = true;

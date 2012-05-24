@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Spinn.Common;
 using Spinn.Model;
 using Spinn.Frontend.Models;
 using Spinn.Repository;
@@ -17,7 +18,9 @@ namespace Spinn.Frontend.Controllers
         private readonly IClientRepository clientRepository;
         public ClientsController()
         {
+
             clientRepository = new RepositoryFactory<IClientRepository>().ResolveRepository();
+            clientRepository.UnitOfWork = new RepositoryFactory<IUnitOfWork>().ResolveRepository();
         }
 
         //

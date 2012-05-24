@@ -16,6 +16,7 @@ namespace Spinn.Stub
         public IUnitOfWork UnitOfWork
         {
             get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
 
         public IQueryable<Client> All()

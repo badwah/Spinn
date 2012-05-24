@@ -13,7 +13,7 @@ namespace Spinn.DAL.EF.Repository
 
         public IQueryable<Project> GetAllProjectsWithClients()
         {
-            return efUnitOfWork.Context.Projects.Include("Client");
+            return EfUnitOfWork.Context.Projects.Include("Client");
         }
 
         #endregion

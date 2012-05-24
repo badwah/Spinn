@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Spinn.Common;
 using Spinn.Repository;
 
 namespace Spinn.Frontend.Controllers
@@ -13,6 +14,7 @@ namespace Spinn.Frontend.Controllers
          public ProjectsController()
         {
             projectRepository = new RepositoryFactory<IProjectRepository>().ResolveRepository();
+            projectRepository.UnitOfWork = new RepositoryFactory<IUnitOfWork>().ResolveRepository();
         }
         public JsonResult List()
         {

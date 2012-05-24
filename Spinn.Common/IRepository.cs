@@ -7,7 +7,7 @@ namespace Spinn.Common
 {
     public interface IRepository<T> :IDisposable where T : class
     {
-        IUnitOfWork UnitOfWork { get; }
+        IUnitOfWork UnitOfWork { get; set; }
         IQueryable<T> All();
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         void Add(T newItem);

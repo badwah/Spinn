@@ -1,0 +1,7 @@
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\bin\Debug\Spinn.Core.dll
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\bin\Debug\Spinn.Core.pdb
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\bin\Debug\Spinn.Model.dll
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\bin\Debug\Spinn.Model.pdb
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\obj\Debug\Spinn.Core.dll
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core\obj\Debug\Spinn.Core.pdb

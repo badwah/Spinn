@@ -38,6 +38,7 @@ namespace Spinn.DAL.NHibernate.Repository
         public IUnitOfWork UnitOfWork
         {
             get { return nHibernateUnitOfWork; }
+            set { nHibernateUnitOfWork = value as NHibernateUnitOfWork; }
         }
 
         public IQueryable<Client> All()

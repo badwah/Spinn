@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpinnModelGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Include="Core\ServicePortfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

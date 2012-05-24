@@ -1,0 +1,5 @@
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core.Facade\bin\Debug\Spinn.Core.Facade.dll
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core.Facade\bin\Debug\Spinn.Core.Facade.pdb
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core.Facade\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core.Facade\obj\Debug\Spinn.Core.Facade.dll
+C:\Users\BEClaviP\Downloads\badwah-Spinn-a726fa6\Spinn.Core.Facade\obj\Debug\Spinn.Core.Facade.pdb
